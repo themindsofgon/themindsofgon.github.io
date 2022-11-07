@@ -4,11 +4,15 @@
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+
 }
 
+
+
 body {
-  font-family: sans-serif;
+  
   text-align:center;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .head {
@@ -16,7 +20,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 63px;
-  background: #171717;
+  background: #fff;
   position: static;
   width: 100%;
   z-index: 100;
@@ -29,7 +33,7 @@ body {
 
 .logo a {
   text-decoration: none;
-  color: #fff;
+  color: #00ade6;
   text-transform: uppercase;
   font-size: 20px;
 }
@@ -51,26 +55,28 @@ ol {
 }
 
 .navbar {
+
   display: flex;
   margin-right: 10px;
 }
 
 
 .navbar li a {
+
   display: block;
   padding: 20px 20px;
-  color: #fff;
+  color: #00ade6;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 20px;
 }
 
 .navbar li a:hover {
-  color: #ecef6e;
+  color: #e72c76;
 }
 
 .logo a:hover {
-  color: #ecef6e;
+  color: #e72c76;
 }
 
 .navbar li:hover>ul {
@@ -78,7 +84,7 @@ ol {
 }
 
 .navbar ul {
-  background: #171717;
+  background: #fff;
 }
 
 .navbar>li {

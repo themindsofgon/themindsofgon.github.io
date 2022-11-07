@@ -56,12 +56,12 @@ p {
   
 .btn {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 10px 40px;
-  border: 2px solid red;
+  border: 2px solid #00ade6;
   color: #fff;
   text-decoration: none;
-  background: red;
+  background: #00ade6;
 }
 
 .btn:hover {
