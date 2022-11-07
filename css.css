@@ -1,0 +1,111 @@
+.header {
+  height: 80vh !important;
+  background: url(fondo.gif) no-repeat center;
+  background-size: cover;
+}
+
+.title {
+  margin-bottom: 0px;
+  font-size: 60px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+.content header h2,
+p {
+  margin-bottom: 40px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+p {
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #fff;
+  padding: 0 100px;
+}
+
+
+.content {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.content2 p {
+  height: 20vh;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.about {
+  background: #171717;
+}
+
+
+  
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 40px;
+  border: 2px solid red;
+  color: #fff;
+  text-decoration: none;
+  background: red;
+}
+
+.btn:hover {
+  background: none;
+}
+
+.btn-home {
+  display: flex;
+}
+
+.btn-home a {
+  margin: 0 10px;
+}
+
+  
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

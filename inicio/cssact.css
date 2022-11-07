@@ -1,0 +1,79 @@
+.header {
+  height: 60vh !important;
+  background: url(1.gif) no-repeat center;
+  background-size: cover;
+
+
+
+}
+
+
+.header2 {
+  height: 60vh !important;
+  background: url(2.gif) no-repeat center;
+  background-size: cover;
+}
+
+.header3 {
+  height: 60vh !important;
+  background: url(3.gif) no-repeat center;
+  background-size: cover;
+}
+
+
+.slidein,
+btn {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-decoration: none;
+  font-size: 60px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
+  animation-direction: normal;
+  text-shadow: 5px 5px 5px black;
+
+}
+
+
+
+.btn:hover {
+  color: rgb(134, 38, 54);
+
+}
+
+
+.content {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sau {
+  padding: 30px;
+  background: #1f1d1d
+}
+
+
+.about {
+  background: #171717;
+}
+
+
+
+@keyframes slidein {
+  from {
+    margin-bottom: 350%;
+  }
+
+  to {
+    margin-bottom: 0%;
+
+  }
+}
