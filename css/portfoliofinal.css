@@ -1,8 +1,4 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #101010;
-    background-color: #ffffff;
-  }
+
   
   .layout_padding {
     padding: 90px 0;
@@ -183,110 +179,6 @@ body {
   }
   
   /*end header section*/
-  .slider_section {
-    position: relative;
-  }
-  
-  .slider_section .row {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  
-  .slider_section .detail-box {
-    margin-top: 120px;
-    position: relative;
-    z-index: 5;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  
-  .slider_section .detail-box .heading_box {
-    padding-left: 45px;
-    position: relative;
-  }
-  
-  .slider_section .detail-box .heading_box::before {
-    content: "";
-    position: absolute;
-    top: -12%;
-    left: 0;
-    width: 495px;
-    height: 130%;
-    border: 1px solid #fed11f;
-  }
-  
-  .slider_section .detail-box h2 {
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-  
-  .slider_section .detail-box h2 span {
-    letter-spacing: 9px;
-  }
-  
-  .slider_section .detail-box h1 {
-    font-weight: bold;
-    font-size: 6rem;
-    color: #fed11f;
-    text-transform: uppercase;
-    letter-spacing: 14.5px;
-  }
-  
-  .slider_section .detail-box a {
-    font-family: 'Raleway', sans-serif;
-    display: inline-block;
-    color: #ffffff;
-    position: relative;
-    background-color: transparent;
-    font-size: 18px;
-    margin-top: 10%;
-    margin-bottom: 45px;
-  }
-  
-  .slider_section .detail-box a::after {
-    content: "";
-    width: 35px;
-    height: 1px;
-    position: absolute;
-    top: 50%;
-    right: -5px;
-    -webkit-transform: translate(100%, -50%);
-            transform: translate(100%, -50%);
-    background-color: #ffffff;
-  }
-  
-  .slider_section .img-box {
-    position: relative;
-  }
-  
-  .slider_section .img-box img {
-    width: 100%;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .slider_section .img-box::before {
-    content: "";
-    position: absolute;
-    top: 35%;
-    left: 38%;
-    width: 250px;
-    height: 250px;
-    background-color: #fff;
-    -webkit-filter: blur(50px);
-            filter: blur(50px);
-    z-index: 1;
-  }
   
   .slider_section #carouselExampleControls {
     margin-top: -95px;
@@ -445,6 +337,7 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+
   }
   
   .project_section .project_container .box {
