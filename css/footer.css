@@ -44,13 +44,13 @@
 footer{
     width: 100%;
     padding: 50px 0px;
-    background-image: url(images/background-footer.svg);
+    background-image: url(../images/footerback.svg);
     background-size: cover;
     background-color: #d0f0f8;
     
     /*background-color: #d0f0f8;
-    -webkit-mask-image: url("../Images/background-footer.svg");
-    mask-image: url("../Images/background-footer.svg");
+    -webkit-mask-image: url("images/footerback.svg");
+    mask-image: url("images/footerback.svg");
     -webkit-mask-size: cover;
     mask-size: cover;*/
 }
