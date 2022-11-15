@@ -48,11 +48,6 @@ footer{
     background-size: cover;
     background-color: #d0f0f8;
     
-    /*background-color: #d0f0f8;
-    -webkit-mask-image: url("images/footerback.svg");
-    mask-image: url("images/footerback.svg");
-    -webkit-mask-size: cover;
-    mask-size: cover;*/
 }
 
 .container__footer{
