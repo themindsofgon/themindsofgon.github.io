@@ -1,7 +1,7 @@
 
   
   .layout_padding {
-    padding: 90px 0;
+    padding: 110px 0;
   }
   
   .layout_padding2 {
@@ -398,7 +398,8 @@
   
   
   .box img:hover{
-    transform: scale(1.01);
+
+    filter:brightness(103%);
 }
 
 
@@ -411,7 +412,11 @@ h3{
 .textoimagen {
   font-weight:400;  
   font-size: 22px;
-  margin-top:20px;
+  margin-top:15px;
+  margin-bottom:80px;
   }
   
   
+.box{
+padding:30px;
+}
