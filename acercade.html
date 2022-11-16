@@ -12,15 +12,11 @@
     <link rel="stylesheet" href="css/acercade.css">
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-
-    <!-- bootstrap css -->
-     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>ACERCA DE</title>
-
 </head>
+
 <body>
     <header>
         <!-- SECCTION NAVBAR-->
@@ -38,18 +34,19 @@
 
 
 
-    <!-- SECCTION NUEVA BIO -->  
+    <!-- SECCTION NUEVA BIO -->
     <section id="sobremi">
         <div class="contenedor-foto">
-            <img src="images/logobiografia.png" alt="logo">
+            <img data-aos="fade-right"data-aos-delay="450" src="images/logobiografia.png" alt="logo">
         </div>
-        <div class="sobremi">
-     
-            <h2>Hola, Soy <span>TheMindsOfGon</span> </h2>
-            <h3>Artista</h3>
-            <p>TheMindsOfGon trata de mi proyecto personal como diseñador gráfico, mi nombre es Gonzalo García y llevo más de ocho años creando contenido para empresas e influencers en la red.</p>
- 
-            <a href="https://linktr.ee/themindsofgon">Todas mis redes</a>
+        <div class="sobremi" >
+
+            <h2 data-aos="fade-down" data-aos-delay="450">Hola, Soy <span>TheMindsOfGon</span> </h2>
+            <h3 data-aos="fade-down" data-aos-delay="450">Artista</h3>
+            <p data-aos="fade-down" data-aos-delay="450">TheMindsOfGon trata de mi proyecto personal como diseñador gráfico, mi nombre es Gonzalo García y llevo
+                más de ocho años creando contenido para empresas e influencers en la red.</p>
+
+            <a data-aos="fade-down" data-aos-delay="450" href="https://linktr.ee/themindsofgon">Todas mis redes</a>
         </div>
     </section>
 
@@ -59,7 +56,7 @@
 
 
     <!-- SECCTION C O N T A C T O -->
-    <section id="contacto">
+    <section data-aos="fade-up" data-aos-delay="150" id="contacto" >
         <h3 class="titulo-seccion">Contacta conmigo</h3>
         <div class="contenedor-form">
             <form action="https://formsubmit.co/themindsofgon@email.com" method="POST">
@@ -90,11 +87,11 @@
                     <a class="email" href="mailto:themindsofgon@gmail.com" title="Email">themindsofgon@gmail.com</a>
                 </div>
             </div>
-            <div class="box__footer" >
-                <a
-                    href  ="https://docs.google.com/forms/d/e/1FAIpQLSc-epUMO3jboOy9vldnsQbRiyoDzdfkUXl-eQV1eD9g0gM0wQ/viewform" target="_blank">Trabaja
-                    conmigo </a> 
-                <a href="https://www.behance.net/themindsofgon" target="_blank" >Portafolio </a>
+            <div class="box__footer">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-epUMO3jboOy9vldnsQbRiyoDzdfkUXl-eQV1eD9g0gM0wQ/viewform"
+                    target="_blank">Trabaja
+                    conmigo </a>
+                <a href="https://www.behance.net/themindsofgon" target="_blank">Portafolio </a>
 
             </div>
 
@@ -121,5 +118,12 @@
     </footer>
 
     <script src="js/contactoscript.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
+
 </html>

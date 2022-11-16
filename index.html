@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="css/portfoliofinal.css">
     <link rel="stylesheet" href="css/contacto.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <title>INICIO</title>
 </head>
 
@@ -34,24 +34,24 @@
     </header>
 
     <!-- SECCTION TITULO -->
-    <header class="cabecera">
+    <header class="cabecera" data-aos="zoom-in" data-aos-delay="500">
         <h2 class="texto">Bienvenido a mis mentes. </h2>
     </header>
-    <div class="trabajaconmigo">
+    <div class="trabajaconmigo" data-aos="zoom-in" data-aos-delay="900">
         <h1 class="h3 font-weight-100"><span><a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSc-epUMO3jboOy9vldnsQbRiyoDzdfkUXl-eQV1eD9g0gM0wQ/viewform"
                     target="_blank" rel="noopener noreferrer"><mark>Trabaja conmigo</mark></a></span></h1>
     </div>
 
     <!-- SECCION PORTAFOLIO -->
-    <section class="project_section layout_padding">
-        <div class="container">
+    <section class="project_section layout_padding" data-aos="fade-up" data-aos-delay="300">
+        <div class="container" >
 
             <div class="project_container layout _padding2-top">
 
                 <div class="padingportafolio">
                     <div class="box">
-                        <a href="https://www.behance.net/gallery/157233339/La-Hoja-Dorada" target="_blank"> 
+                        <a href="https://www.behance.net/gallery/157233339/La-Hoja-Dorada" target="_blank">
                             <img src="images/lahojadorada.jpg" alt="relsb" /></a>
                         <p class="textoimagen">La Hoja Dorada</p>
                     </div>
@@ -81,7 +81,7 @@
 
 
     <!-- SECCTION C O N T A C T O -->
-    <section id="contacto">
+    <section data-aos="fade-up" data-aos-delay="150" id="contacto" >
         <h3 class="titulo-seccion">Contacta conmigo</h3>
         <div class="contenedor-form">
             <form action="https://formsubmit.co/themindsofgon@email.com" method="POST">
@@ -139,6 +139,13 @@
             <p>© TheMindsOfGon / Todos los derechos reservados.</p>
         </div>
     </footer>
-</body>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+    << /body>>
 
 </html>
