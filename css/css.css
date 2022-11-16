@@ -17,6 +17,11 @@
   font-size:30px;
 }
 
+.trabajaconmigo:hover{
+transform: scale(1.09);
+}
+
+
 mark{
   background-color:#2babcb;
  color:white;
