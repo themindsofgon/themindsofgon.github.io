@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="css/portfoliofinal.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/irarriba.css">
+    <link rel="stylesheet" href="css/hamburguesaestilos.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
     <title>INICIO</title>
 </head>
@@ -23,12 +25,20 @@
             <div class="logo">
                 <a href="index.html"><img src="images/logo.png"></a>
             </div>
-
             <ul class="menu">
                 <li><a href="index.html">Trabajos</a></li>
                 <li><a href="acercade.html">Sobre mi</a></li>
                 <li><a href="https://www.instagram.com/themindsofgon/" target="_blank">
-                    <i class="fa-brands fa-instagram"></i></a></li>
+                        <i class="fa-brands fa-instagram"></i></a></li>
+                <!-- HAMBURGUESA-->
+                <div class="bars__menu">
+                    <span class="line1__bars-menu"></span>
+                    <span class="line2__bars-menu"></span>
+                    <span class="line3__bars-menu"></span>
+                </div>
+              
+
+
             </ul>
         </nav>
     </header>
@@ -47,7 +57,7 @@
 
 
     <!-- SECCION PORTAFOLIO -->
-    <section data-aos="fade-up" data-aos-delay="300" class="project_section layout_padding" >
+    <section data-aos="fade-up" data-aos-delay="300" class="project_section layout_padding">
         <div class="container">
 
             <div class="project_container layout _padding2-top">
@@ -140,7 +150,8 @@
                     <i class="fa-brands fa-instagram"></i></i> Instagram</a>
                 <a href="https://twitter.com/themindsofgon" target="_blank"><i class="fa-brands fa-twitter"></i>
                     Twitter</a>
-                <a href="https://www.linkedin.com/in/themindsofgon/" target="_blank"><i class="fa-brands fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/themindsofgon/" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i>
                     Linkedin</a>
             </div>
 
@@ -153,9 +164,9 @@
     </footer>
 
 
-        <!-- JS -->
+    <!-- JS -->
     <script src="js/irarriba.js"></script>
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="js/burguerbutton.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
