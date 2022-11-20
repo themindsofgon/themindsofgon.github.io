@@ -10,28 +10,37 @@
     <link rel="stylesheet" href="css/portfoliofinal.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/irarriba.css">
+    <link rel="stylesheet" href="css/hamburguesaestilos.css">
     <link rel="stylesheet" href="css/mural.css">
+    <link rel="stylesheet" href="css/resolucion.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>INICIO</title>
 </head>
 
 <body>
-    <header>
-        <!-- SECCTION NAVBAR-->
-        <nav class="nav">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png"></a>
-            </div>
 
-            <ul class="menu">
-                <li><a href="index.html">Trabajos</a></li>
-                <li><a href="acercade.html">Sobre mi</a></li>
-                <li><a href="https://www.instagram.com/themindsofgon/" target="_blank">
-                    <i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- SECCTION NAVBAR-->
+        <header>
+            <nav class="nav container__menu"">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="menu">
+                    <i class="fas fa-bars" id="btn_menu"></i>
+                    <div id="back_menu"></div>
+                    <nav id="nav">
+                        <img src="images/logo-magtimus-v2.3-1.png" alt="">
+                        <ul>
+                            <li><a href="index.html">Trabajos</a></li>
+                            <li><a href="acercade.html">Sobre mi</a></li>
+                            <li><a href="https://www.instagram.com/themindsofgon/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </header>
 
 
 
@@ -132,6 +141,7 @@
 
         <!-- JS -->
     <script src="js/irarriba.js"></script>
+    <script src="js/burguerbutton.js"></script>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

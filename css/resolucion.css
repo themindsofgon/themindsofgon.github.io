@@ -14,14 +14,16 @@
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
+    .logo img{
+        margin-left: auto;
+        margin-right:300px;
+            }
+
 }
 
 
 /* TABLET */
 @media screen and (max-width:1020px){
-
-
-   
 
     .project_section .project_container{
         -ms-flex-wrap: wrap;
@@ -30,3 +32,27 @@
 }
 
                                                                             /* ACERCA DE */
+
+@media screen and (max-width:800px){
+
+.contenedor-foto{
+    position:absolute;
+height:10%;
+}
+
+  h2{
+   padding-top:600px;
+   width:80%;
+
+
+
+  
+ 
+}
+
+
+/* TABLET */
+@media screen and (max-width:1020px){
+
+
+}
