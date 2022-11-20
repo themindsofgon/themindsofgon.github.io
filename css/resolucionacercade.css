@@ -20,22 +20,7 @@
     
             }
 
-            .menu{
-                margin-left: 180px;
-     
-                   
-
-}
-
-
-/* TABLET */
-@media screen and (max-width:1020px){
-
-    .project_section .project_container{
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-}
+   
 
                                                                             /* ACERCA DE */
 
