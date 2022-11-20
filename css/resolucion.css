@@ -2,6 +2,7 @@
 /* MOVIL */
 @media screen and (max-width:800px){
     .texto{
+        margin-top:-600px;
     width:100%;
     font-size:41px;
     }
@@ -16,8 +17,13 @@
     }
     .logo img{
         margin-left: auto;
-        margin-right:300px;
+    
             }
+
+            .menu{
+                margin-left: 180px;
+     
+                   
 
 }
 
@@ -38,7 +44,10 @@
 .contenedor-foto{
     position:absolute;
 height:10%;
+padding:1px;
+margin-left:300px;
 }
+
 
   h2{
    padding-top:600px;
