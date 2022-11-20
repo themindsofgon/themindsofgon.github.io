@@ -39,3 +39,11 @@
 }
 
         
+
+/* FOOTER */
+@media screen and (max-width:800px){
+
+    .container__footer{
+       display:grid;
+    }
+}
