@@ -1,0 +1,66 @@
+                                                                            /* INDEX */
+/* MOVIL */
+@media screen and (max-width:800px){
+    .texto{
+        margin-bottom:900px;
+    width:100%;
+    font-size:41px;
+    }
+
+    .trabajaconmigo{
+        width:100%;
+        margin-top: -10px;
+    }
+    .project_section .project_container{
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .logo img{
+        margin-left: auto;
+    
+            }
+
+            .menu{
+                margin-left: 180px;
+     
+                   
+
+}
+
+
+/* TABLET */
+@media screen and (max-width:1020px){
+
+    .project_section .project_container{
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+                                                                            /* ACERCA DE */
+
+@media screen and (max-width:800px){
+
+.contenedor-foto{
+    position:absolute;
+height:10%;
+padding:1px;
+margin-left:300px;
+}
+
+
+  h2{
+   padding-top:600px;
+   width:80%;
+
+
+
+  
+ 
+}
+
+
+/* TABLET */
+@media screen and (max-width:1020px){
+
+}
