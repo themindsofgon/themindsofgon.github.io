@@ -2,20 +2,18 @@
 /* MOVIL */
 @media screen and (max-width:810px){
     .texto{
-        margin-bottom:900px;
-        margin-top:-10px;
+
+        margin-top:90px;
     width:100%;
     font-size:41px;
     }
 
     .trabajaconmigo{
         width:100%;
-        margin-top: -930px;
+        margin-top: -93px;
+        margin-top:10px;
     }
-    .project_section .project_container{
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
+   
     .logo img{
         margin-left: auto;
     
