@@ -1,6 +1,6 @@
                                                                             /* INDEX */
 /* MOVIL */
-@media screen and (max-width:800px){
+@media screen and (max-width:810px){
     .texto{
         margin-bottom:900px;
         margin-top:-10px;
@@ -40,10 +40,3 @@
 
         
 
-/* FOOTER */
-@media screen and (max-width:800px){
-
-    .container__footer{
-       display:grid;
-    }
-}
