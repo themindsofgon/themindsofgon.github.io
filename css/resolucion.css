@@ -1,0 +1,32 @@
+                                                                            /* INDEX */
+/* MOVIL */
+@media screen and (max-width:800px){
+    .texto{
+    width:100%;
+    font-size:41px;
+    }
+
+    .trabajaconmigo{
+        width:100%;
+        margin-top: -10px;
+    }
+    .project_section .project_container{
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* TABLET */
+@media screen and (max-width:1020px){
+
+
+   
+
+    .project_section .project_container{
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+                                                                            /* ACERCA DE */
