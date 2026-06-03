@@ -72,13 +72,13 @@ footer > * {
   position: relative;
 }
 
-/* Nube sólida superior izquierda */
+/* Nube sólida superior izquierda — solo asoma por arriba */
 .footer-top::before {
   content: "";
   position: absolute;
-  top: -45px;
-  left: 60px;
-  width: 220px;
+  top: -70px;
+  left: 120px;
+  width: 200px;
   height: 110px;
   pointer-events: none;
   z-index: 0;
@@ -87,13 +87,13 @@ footer > * {
   background-repeat: no-repeat;
 }
 
-/* Nube sólida superior derecha */
+/* Nube sólida superior derecha — solo asoma por arriba */
 .footer-top::after {
   content: "";
   position: absolute;
-  top: -40px;
-  right: 100px;
-  width: 180px;
+  top: -65px;
+  right: 200px;
+  width: 160px;
   height: 90px;
   pointer-events: none;
   z-index: 0;
@@ -137,13 +137,13 @@ footer > * {
   position: relative;
 }
 
-/* Nube sólida borde derecho */
+/* Nube sólida — solo asoma por abajo a la derecha */
 .footer-bottom::after {
   content: "";
   position: absolute;
-  bottom: -30px;
-  right: -30px;
-  width: 200px;
+  bottom: -55px;
+  right: 60px;
+  width: 180px;
   height: 100px;
   pointer-events: none;
   z-index: 0;
@@ -152,13 +152,13 @@ footer > * {
   background-repeat: no-repeat;
 }
 
-/* Nube sólida borde izquierdo */
+/* Nube sólida — solo asoma por abajo a la izquierda */
 .footer-bottom::before {
   content: "";
   position: absolute;
-  bottom: -25px;
-  left: -20px;
-  width: 160px;
+  bottom: -50px;
+  left: 40px;
+  width: 140px;
   height: 80px;
   pointer-events: none;
   z-index: 0;
