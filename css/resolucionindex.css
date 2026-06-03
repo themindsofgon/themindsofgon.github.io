@@ -31,6 +31,14 @@
 
 }
 
+/* AOS más rápido en móvil */
+@media screen and (max-width: 810px) {
+  [data-aos] {
+    transition-duration: 200ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
 /* TABLET */
 @media screen and (max-width:1020px){
 
