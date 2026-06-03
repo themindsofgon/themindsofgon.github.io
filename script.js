@@ -15,6 +15,27 @@ for (let i = 0; i < MAX_CLOUDS; i++) {
   clouds.push(d);
 }
 
+// Hide default cursor on all interactive elements
+const styleTag = document.createElement('style');
+styleTag.textContent = 'a, button, input, select, textarea, label, [role="button"], [onclick] { cursor: none !important; }';
+document.head.appendChild(styleTag);
+
+let isHovering = false;
+let hoverScale = 1;
+
+const clickables = 'a, button, input, select, textarea, label, [role="button"], [onclick]';
+
+document.querySelectorAll(clickables).forEach(el => {
+  el.addEventListener('mouseenter', () => { isHovering = true; });
+  el.addEventListener('mouseleave', () => { isHovering = false; });
+});
+
+// Also catch dynamically added elements
+document.addEventListener('mouseover', e => {
+  if (e.target.closest(clickables)) { isHovering = true; }
+  else { isHovering = false; }
+});
+
 document.addEventListener('mousemove', e => {
   velX = e.clientX - lastX;
   velY = e.clientY - lastY;
@@ -41,8 +62,15 @@ function animate(now) {
   smoothAngle = lerpAngle(smoothAngle, targetAngle, 0.12);
 
   const t = now * 0.0018;
-  const breathW = 42 + Math.sin(t * 1.3) * 1.5;
-  const breathH = 29 + Math.cos(t * 1.7) * 1;
+
+  const targetScale = isHovering ? 1.6 : 1;
+  hoverScale += (targetScale - hoverScale) * 0.12;
+
+  const pulse = isHovering ? Math.sin(now * 0.012) * 0.08 : 0;
+  const finalScale = hoverScale + pulse;
+
+  const breathW = 42 * finalScale + Math.sin(t * 1.3) * 1.5;
+  const breathH = 29 * finalScale + Math.cos(t * 1.7) * 1;
   cursor.style.width  = breathW + 'px';
   cursor.style.height = breathH + 'px';
 
