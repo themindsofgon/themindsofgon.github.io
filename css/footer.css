@@ -170,13 +170,14 @@ footer > * {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: all 0.5s ease;
   display: inline-block;
 }
 
 .footer-nav a:hover {
   color: #d1286a;
-  transform: translateY(-3px);
+  padding: 5px 10px;
+  border-radius: 15px;
 }
 
 .footer-social {
@@ -194,7 +195,7 @@ footer > * {
   color: #fff;
   border-radius: 0;
   border: none !important;
-  transition: background 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -203,6 +204,7 @@ footer > * {
   background: none;
   color: #d1286a;
   opacity: 1;
+  transform: translateY(-3px);
 }
 
 .footer-social a:focus {
