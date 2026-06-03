@@ -208,7 +208,7 @@
     grid-template-rows: none;
     grid-auto-rows: 240px;
     padding: 0 12px;
-    gap: 14px;
+    gap: 20px !important;
   }
 
   .proyecto-card,
