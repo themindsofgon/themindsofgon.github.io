@@ -204,10 +204,16 @@
 
   .proyectos-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 240px;
     padding: 0 12px;
   }
 
-  .proyecto-card {
-    height: 260px;
+  .proyecto-card,
+  .proyecto-grande,
+  .proyecto-tall {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 240px;
   }
 }

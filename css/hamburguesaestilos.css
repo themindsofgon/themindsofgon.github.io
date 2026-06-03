@@ -67,6 +67,7 @@
 
     .menu ul li a{
         color: black;
+        font-size: 22px;
     }
 
     #selected{
