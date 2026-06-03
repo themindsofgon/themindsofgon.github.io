@@ -36,6 +36,33 @@ document.addEventListener('mouseover', e => {
   else { isHovering = false; }
 });
 
+// Click burst: mini brains explode outward
+document.addEventListener('click', e => {
+  const count = 7;
+  for (let i = 0; i < count; i++) {
+    const b = document.createElement('div');
+    b.style.cssText = `
+      position:fixed; pointer-events:none; z-index:9998;
+      width:18px; height:12px;
+      background-image:url('images/logo.png');
+      background-size:contain; background-repeat:no-repeat;
+      left:${e.clientX - 9}px; top:${e.clientY - 6}px;
+      transition: none;
+    `;
+    document.body.appendChild(b);
+    const angle = (i / count) * Math.PI * 2;
+    const dist = 40 + Math.random() * 30;
+    const tx = Math.cos(angle) * dist;
+    const ty = Math.sin(angle) * dist;
+    requestAnimationFrame(() => {
+      b.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
+      b.style.transform = `translate(${tx}px, ${ty}px) scale(0.3) rotate(${Math.random()*360}deg)`;
+      b.style.opacity = '0';
+    });
+    setTimeout(() => b.remove(), 520);
+  }
+});
+
 document.addEventListener('mousemove', e => {
   velX = e.clientX - lastX;
   velY = e.clientY - lastY;
@@ -63,7 +90,7 @@ function animate(now) {
 
   const t = now * 0.0018;
 
-  const targetScale = isHovering ? 1.1 : 1;
+  const targetScale = isHovering ? 1.05 : 1;
   hoverScale += (targetScale - hoverScale) * 0.12;
 
   const finalScale = hoverScale;
