@@ -20,67 +20,14 @@ const styleTag = document.createElement('style');
 styleTag.textContent = 'a, button, input, select, textarea, label, [role="button"], [onclick] { cursor: none !important; }';
 document.head.appendChild(styleTag);
 
-// Hover ring
-const ring = document.createElement('div');
-ring.style.cssText = `
-  position:fixed; pointer-events:none; z-index:9998;
-  width:44px; height:44px; border-radius:50%;
-  border:2px solid rgba(209,40,106,0.85);
-  transform:translate(-50%,-50%) scale(0);
-  transition:transform 0.2s cubic-bezier(.34,1.56,.64,1), opacity 0.2s ease;
-  opacity:0;
-`;
-document.body.appendChild(ring);
-let ringX = 0, ringY = 0;
-
 let isHovering = false;
 let hoverScale = 1;
+let glowAmount = 0;
 
 const clickables = 'a, button, input, select, textarea, label, [role="button"], [onclick]';
 
-document.querySelectorAll(clickables).forEach(el => {
-  el.addEventListener('mouseenter', () => { isHovering = true; });
-  el.addEventListener('mouseleave', () => { isHovering = false; });
-});
-
-// Also catch dynamically added elements
 document.addEventListener('mouseover', e => {
-  if (e.target.closest(clickables)) {
-    isHovering = true;
-    ring.style.transform = 'translate(-50%,-50%) scale(1)';
-    ring.style.opacity = '1';
-  } else {
-    isHovering = false;
-    ring.style.transform = 'translate(-50%,-50%) scale(0)';
-    ring.style.opacity = '0';
-  }
-});
-
-// Click burst: mini brains explode outward
-document.addEventListener('click', e => {
-  const count = 7;
-  for (let i = 0; i < count; i++) {
-    const b = document.createElement('div');
-    b.style.cssText = `
-      position:fixed; pointer-events:none; z-index:9998;
-      width:18px; height:12px;
-      background-image:url('images/logo.png');
-      background-size:contain; background-repeat:no-repeat;
-      left:${e.clientX - 9}px; top:${e.clientY - 6}px;
-      transition: none;
-    `;
-    document.body.appendChild(b);
-    const angle = (i / count) * Math.PI * 2;
-    const dist = 40 + Math.random() * 30;
-    const tx = Math.cos(angle) * dist;
-    const ty = Math.sin(angle) * dist;
-    requestAnimationFrame(() => {
-      b.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
-      b.style.transform = `translate(${tx}px, ${ty}px) scale(0.3) rotate(${Math.random()*360}deg)`;
-      b.style.opacity = '0';
-    });
-    setTimeout(() => b.remove(), 520);
-  }
+  isHovering = !!e.target.closest(clickables);
 });
 
 document.addEventListener('mousemove', e => {
@@ -91,8 +38,6 @@ document.addEventListener('mousemove', e => {
 
   cursor.style.left = e.clientX + 'px';
   cursor.style.top  = e.clientY + 'px';
-  ring.style.left = e.clientX + 'px';
-  ring.style.top  = e.clientY + 'px';
 
   trail.push({ x: e.clientX, y: e.clientY, t: performance.now() });
   if (trail.length > MAX_CLOUDS * 3) trail = trail.slice(-MAX_CLOUDS * 3);
@@ -115,15 +60,21 @@ function animate(now) {
   const targetScale = isHovering ? 1.05 : 1;
   hoverScale += (targetScale - hoverScale) * 0.12;
 
-  const finalScale = hoverScale;
+  const targetGlow = isHovering ? 1 : 0;
+  glowAmount += (targetGlow - glowAmount) * 0.1;
 
-  const breathW = 32 * finalScale + Math.sin(t * 1.3) * 0.8;
-  const breathH = 22 * finalScale + Math.cos(t * 1.7) * 0.5;
+  const breathW = 32 * hoverScale + Math.sin(t * 1.3) * 0.8;
+  const breathH = 22 * hoverScale + Math.cos(t * 1.7) * 0.5;
   cursor.style.width  = breathW + 'px';
   cursor.style.height = breathH + 'px';
 
   const wiggle = isHovering ? Math.sin(now * 0.008) * 12 : 0;
+  const glowPulse = isHovering ? 6 + Math.sin(now * 0.006) * 3 : 0;
+  const glow = glowAmount * glowPulse;
   cursor.style.transform = `translate(-50%, -50%) rotate(${wiggle}deg)`;
+  cursor.style.filter = glow > 0.1
+    ? `drop-shadow(0 0 ${glow}px rgba(209,40,106,0.9)) drop-shadow(0 0 ${glow * 1.8}px rgba(209,40,106,0.5))`
+    : 'none';
 
   velX *= 0.75;
   velY *= 0.75;
