@@ -208,6 +208,7 @@
     grid-template-rows: none;
     grid-auto-rows: 240px;
     padding: 0 12px;
+    gap: 14px;
   }
 
   .proyecto-card,
@@ -216,5 +217,9 @@
     grid-column: auto !important;
     grid-row: auto !important;
     height: 240px;
+  }
+
+  .proyecto-overlay {
+    opacity: 1;
   }
 }
