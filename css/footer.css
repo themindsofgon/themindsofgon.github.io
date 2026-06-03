@@ -175,11 +175,14 @@ footer > * {
 
 .footer-nav a:hover,
 .footer-nav a:focus,
-.footer-nav a:active,
-.footer-nav a:visited {
+.footer-nav a:active {
   color: #d1286a;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+.footer-nav a:visited {
+  color: #fff;
 }
 
 .footer-social {
