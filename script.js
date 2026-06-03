@@ -63,8 +63,8 @@ function animate(now) {
   const targetGlow = isHovering ? 1 : 0;
   glowAmount += (targetGlow - glowAmount) * 0.1;
 
-  const breathW = 24 * hoverScale + Math.sin(t * 1.3) * 0.8;
-  const breathH = 16 * hoverScale + Math.cos(t * 1.7) * 0.5;
+  const breathW = 26 * hoverScale + Math.sin(t * 1.3) * 0.8;
+  const breathH = 18 * hoverScale + Math.cos(t * 1.7) * 0.5;
   cursor.style.width  = breathW + 'px';
   cursor.style.height = breathH + 'px';
 
@@ -88,8 +88,8 @@ function animate(now) {
       const scale = Math.max(0.1, (1 - age) * 0.65);
       const alpha = Math.max(0, 0.8 - age * 1.1);
 
-      const w = 24 * scale;
-      const h = 16 * scale;
+      const w = 26 * scale;
+      const h = 18 * scale;
 
       cloud.style.left      = (p.x - w / 2) + 'px';
       cloud.style.top       = (p.y - h / 2) + 'px';
