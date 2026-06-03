@@ -63,16 +63,18 @@ function animate(now) {
 
   const t = now * 0.0018;
 
-  const targetScale = isHovering ? 1.6 : 1;
+  const targetScale = isHovering ? 1.25 : 1;
   hoverScale += (targetScale - hoverScale) * 0.12;
 
-  const pulse = isHovering ? Math.sin(now * 0.012) * 0.08 : 0;
-  const finalScale = hoverScale + pulse;
+  const finalScale = hoverScale;
 
   const breathW = 42 * finalScale + Math.sin(t * 1.3) * 1.5;
   const breathH = 29 * finalScale + Math.cos(t * 1.7) * 1;
   cursor.style.width  = breathW + 'px';
   cursor.style.height = breathH + 'px';
+
+  const wiggle = isHovering ? Math.sin(now * 0.008) * 12 : 0;
+  cursor.style.transform = `translate(-50%, -50%) rotate(${wiggle}deg)`;
 
   velX *= 0.75;
   velY *= 0.75;

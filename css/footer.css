@@ -166,7 +166,7 @@ footer > * {
 
 .footer-nav a {
   text-decoration: none;
-  color: rgba(255,255,255,0.85);
+  color: #fff;
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -199,8 +199,9 @@ footer > * {
 }
 
 .footer-social a:hover {
-  background: #d1286a;
+  background: none;
   color: #fff;
+  opacity: 0.7;
 }
 
 .footer-social a:focus {
