@@ -1,23 +1,60 @@
-
-img{
-    width:100%;
+.mural-cerebros {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-.row{
-    display:flex;
-    flex-wrap:wrap;
+.mural-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 260px;
+  gap: 0;
 }
 
-.column{
-    flex:25%;
-    padding:0px;
-
+.mural-cell {
+  overflow: hidden;
+  position: relative;
 }
 
-
-.column img{
-    margin-top:-7px;
+.mural-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
+.mural-cell:hover img {
+  transform: scale(1.06);
+}
 
+.mural-tall {
+  grid-row: span 2;
+}
 
+.mural-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+  .mural-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mural-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 140px;
+  }
+
+  .mural-tall {
+    grid-row: span 1;
+  }
+
+  .mural-wide {
+    grid-column: span 2;
+  }
+}
