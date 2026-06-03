@@ -73,6 +73,10 @@ footer::after {
   .footer-cloud-divider {
     margin: 0 0 -2px;
   }
+
+  .footer-cloud-divider svg {
+    height: 16px !important;
+  }
 }
 
 .footer-wave-anim {
