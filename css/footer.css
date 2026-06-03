@@ -72,18 +72,21 @@ footer > * {
   position: relative;
 }
 
-/* Silueta de nubes blancas como borde superior del footer */
+/* Nubes blancas asomando desde el borde superior */
 .footer-top::before {
   content: "";
   position: absolute;
-  top: -48px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 52px;
+  height: 70px;
   pointer-events: none;
   z-index: 2;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 52' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,52 L0,36 C30,36 40,20 70,20 C85,20 95,28 110,28 C130,28 140,10 170,10 C200,10 210,26 235,26 C255,26 265,14 290,14 C315,14 325,30 355,30 C375,30 385,18 415,18 C445,18 455,34 480,34 C500,34 510,22 535,22 C565,22 575,38 605,38 C625,38 635,24 660,24 C685,24 695,40 725,40 C745,40 755,28 780,28 C805,28 815,12 845,12 C875,12 885,32 910,32 C930,32 940,20 965,20 C990,20 1000,36 1030,36 C1050,36 1060,16 1090,16 C1120,16 1130,34 1155,34 C1175,34 1185,22 1210,22 C1235,22 1245,38 1275,38 C1300,38 1310,26 1340,26 C1365,26 1375,42 1400,42 C1415,42 1425,36 1440,36 L1440,52 Z'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 70'%3E%3Cg fill='white'%3E%3Ccircle cx='80' cy='0' r='44'/%3E%3Ccircle cx='140' cy='0' r='56'/%3E%3Ccircle cx='210' cy='0' r='40'/%3E%3Crect x='44' y='0' width='206' height='30'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 70'%3E%3Cg fill='white'%3E%3Ccircle cx='60' cy='0' r='38'/%3E%3Ccircle cx='120' cy='0' r='50'/%3E%3Ccircle cx='190' cy='0' r='36'/%3E%3Ccircle cx='240' cy='0' r='28'/%3E%3Crect x='28' y='0' width='240' height='28'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 300px 70px, 260px 70px;
+  background-position: 18% 0, 68% 0;
   background-repeat: no-repeat;
 }
 
