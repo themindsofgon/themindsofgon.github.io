@@ -194,7 +194,7 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 768px) {
   #proyectos {
     padding: 20px 0 40px;
   }
