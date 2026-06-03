@@ -241,8 +241,14 @@ a[href^="tel"] {
 }
 
 a[href^="mailto"]:hover,
-a[href^="tel"]:hover {
-  color: #d1286a;
+a[href^="mailto"]:focus,
+a[href^="mailto"]:active,
+a[href^="tel"]:hover,
+a[href^="tel"]:focus,
+a[href^="tel"]:active {
+  color: #d1286a !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 900px) {
