@@ -27,27 +27,27 @@ footer::after {
 }
 
 footer::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='130' viewBox='0 0 700 130'%3E%3Cg fill='white' opacity='0.18'%3E%3Cg transform='translate(30,40)'%3E%3Cellipse cx='80' cy='72' rx='72' ry='30'/%3E%3Ccircle cx='30' cy='68' r='28'/%3E%3Ccircle cx='72' cy='48' r='36'/%3E%3Ccircle cx='120' cy='60' r='26'/%3E%3C/g%3E%3Cg transform='translate(360,30)'%3E%3Cellipse cx='90' cy='80' rx='82' ry='34'/%3E%3Ccircle cx='28' cy='76' r='30'/%3E%3Ccircle cx='78' cy='52' r='42'/%3E%3Ccircle cx='136' cy='66' r='28'/%3E%3Ccircle cx='168' cy='78' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-size: 700px 130px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='130' viewBox='0 0 800 130'%3E%3Cg fill='white'%3E%3Cg transform='translate(20,32)'%3E%3Cellipse cx='90' cy='80' rx='82' ry='28'/%3E%3Ccircle cx='28' cy='72' r='32'/%3E%3Ccircle cx='80' cy='46' r='44'/%3E%3Ccircle cx='148' cy='62' r='32'/%3E%3Ccircle cx='184' cy='74' r='22'/%3E%3C/g%3E%3Cg transform='translate(500,40)'%3E%3Cellipse cx='70' cy='72' rx='62' ry='22'/%3E%3Ccircle cx='22' cy='66' r='26'/%3E%3Ccircle cx='66' cy='44' r='34'/%3E%3Ccircle cx='118' cy='58' r='24'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 800px 130px;
   background-position: 0 0;
-  animation: footer-clouds-slow 26s linear infinite;
+  animation: footer-clouds-slow 30s linear infinite;
 }
 
 footer::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='130' viewBox='0 0 500 130'%3E%3Cg fill='white' opacity='0.11'%3E%3Cg transform='translate(10,50)'%3E%3Cellipse cx='65' cy='64' rx='58' ry='24'/%3E%3Ccircle cx='22' cy='60' r='22'/%3E%3Ccircle cx='60' cy='42' r='30'/%3E%3Ccircle cx='104' cy='56' r='20'/%3E%3C/g%3E%3Cg transform='translate(280,38)'%3E%3Cellipse cx='75' cy='70' rx='66' ry='28'/%3E%3Ccircle cx='24' cy='66' r='24'/%3E%3Ccircle cx='68' cy='46' r='34'/%3E%3Ccircle cx='118' cy='60' r='22'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-size: 500px 130px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='130' viewBox='0 0 600 130'%3E%3Cg fill='white'%3E%3Cg transform='translate(60,44)'%3E%3Cellipse cx='65' cy='68' rx='56' ry='20'/%3E%3Ccircle cx='20' cy='62' r='22'/%3E%3Ccircle cx='60' cy='42' r='30'/%3E%3Ccircle cx='108' cy='56' r='20'/%3E%3C/g%3E%3Cg transform='translate(360,30)'%3E%3Cellipse cx='80' cy='78' rx='72' ry='26'/%3E%3Ccircle cx='24' cy='70' r='28'/%3E%3Ccircle cx='74' cy='48' r='38'/%3E%3Ccircle cx='132' cy='64' r='26'/%3E%3Ccircle cx='162' cy='74' r='18'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 600px 130px;
   background-position: 0 0;
-  animation: footer-clouds-fast 16s linear infinite;
+  animation: footer-clouds-fast 20s linear infinite;
 }
 
 @keyframes footer-clouds-slow {
   from { background-position: 0 0; }
-  to   { background-position: 700px 0; }
+  to   { background-position: 800px 0; }
 }
 
 @keyframes footer-clouds-fast {
   from { background-position: 0 0; }
-  to   { background-position: 500px 0; }
+  to   { background-position: 600px 0; }
 }
 
 footer > * {
