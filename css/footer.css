@@ -173,8 +173,13 @@ footer > * {
   transition: color 0.2s ease;
 }
 
-.footer-nav a:hover {
+.footer-nav a:hover,
+.footer-nav a:focus,
+.footer-nav a:active,
+.footer-nav a:visited {
   color: #d1286a;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer-social {
