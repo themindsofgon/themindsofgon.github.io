@@ -79,11 +79,11 @@
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 14px 24px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   width: fit-content;
-  transition: border-color 0.3s, background 0.3s, color 0.3s;
+  transition: color 0.3s;
   margin-top: 8px;
 }
 
@@ -116,17 +116,15 @@
   justify-content: center;
   width: 42px;
   height: 42px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
+  border: none;
+  border-radius: 0;
   color: #111;
   text-decoration: none;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  transition: color 0.2s, transform 0.2s;
 }
 
 .contacto-redes a:hover {
-  border-color: #d1286a;
-  background: #d1286a;
-  color: #fff;
+  color: #d1286a;
   transform: translateY(-3px);
 }
 
