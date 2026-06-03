@@ -63,7 +63,7 @@ function animate(now) {
 
   const t = now * 0.0018;
 
-  const targetScale = isHovering ? 1.25 : 1;
+  const targetScale = isHovering ? 1.1 : 1;
   hoverScale += (targetScale - hoverScale) * 0.12;
 
   const finalScale = hoverScale;
