@@ -63,15 +63,14 @@ function animate(now) {
   const targetGlow = isHovering ? 1 : 0;
   glowAmount += (targetGlow - glowAmount) * 0.1;
 
-  const breathW = 32 * hoverScale + Math.sin(t * 1.3) * 0.8;
-  const breathH = 22 * hoverScale + Math.cos(t * 1.7) * 0.5;
+  const breathW = 28 * hoverScale + Math.sin(t * 1.3) * 0.8;
+  const breathH = 19 * hoverScale + Math.cos(t * 1.7) * 0.5;
   cursor.style.width  = breathW + 'px';
   cursor.style.height = breathH + 'px';
 
-  const wiggle = isHovering ? Math.sin(now * 0.008) * 12 : 0;
   const glowPulse = isHovering ? 14 + Math.sin(now * 0.006) * 6 : 0;
   const glow = glowAmount * glowPulse;
-  cursor.style.transform = `translate(-50%, -50%) rotate(${wiggle}deg)`;
+  cursor.style.transform = `translate(-50%, -50%)`;
   cursor.style.filter = glow > 0.1
     ? `drop-shadow(0 0 ${glow}px rgba(209,40,106,1)) drop-shadow(0 0 ${glow * 2}px rgba(209,40,106,0.7)) drop-shadow(0 0 ${glow * 3}px rgba(209,40,106,0.3))`
     : 'none';
@@ -89,8 +88,8 @@ function animate(now) {
       const scale = Math.max(0.1, (1 - age) * 0.65);
       const alpha = Math.max(0, 0.8 - age * 1.1);
 
-      const w = 32 * scale;
-      const h = 22 * scale;
+      const w = 28 * scale;
+      const h = 19 * scale;
 
       cloud.style.left      = (p.x - w / 2) + 'px';
       cloud.style.top       = (p.y - h / 2) + 'px';
