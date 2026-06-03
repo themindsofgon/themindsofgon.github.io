@@ -1,3 +1,8 @@
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 #cursor {
   position: fixed;
   width: 42px;
