@@ -1,19 +1,3 @@
-.footer-cloud-deco {
-  position: relative;
-  margin: 0 70px;
-  width: calc(100% - 140px);
-  height: 70px;
-  margin-bottom: -2px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.footer-cloud-deco svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
 footer {
   display: flex;
   flex-direction: column;
@@ -25,8 +9,7 @@ footer {
   background: #3AAEDE;
   color: #fff;
   overflow: hidden;
-  border-top: none;
-  border-radius: 0;
+  border-top: 4px solid #d1286a;
   position: relative;
 }
 
@@ -72,25 +55,12 @@ footer > * {
   z-index: 1;
 }
 
-.footer-top > *,
-.footer-bottom > * {
-  position: relative;
-  z-index: 1;
-}
-
-
 .footer-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 32px 60px;
   border-bottom: 1px solid rgba(255,255,255,0.25);
-  position: relative;
-}
-
-.footer-top::before,
-.footer-top::after {
-  display: none;
 }
 
 .footer-logo {
@@ -125,12 +95,6 @@ footer > * {
   justify-content: space-between;
   padding: 20px 60px;
   width: 100%;
-  position: relative;
-}
-
-.footer-bottom::after,
-.footer-bottom::before {
-  display: none;
 }
 
 .footer-nav {
@@ -215,7 +179,6 @@ a[href^="tel"]:hover {
   footer {
     margin: 0;
     width: 100%;
-    border-radius: 0;
   }
   .footer-top,
   .footer-bottom {
