@@ -37,6 +37,8 @@
   position: absolute;
   inset: 0;
   z-index: 4;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .proyecto-grande {
@@ -217,7 +219,7 @@
     grid-column: auto !important;
     grid-row: auto !important;
     height: 240px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   .proyecto-overlay {
