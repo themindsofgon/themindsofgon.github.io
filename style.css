@@ -6,8 +6,8 @@ html, body {
 
 #cursor {
   position: fixed;
-  width: 24px;
-  height: 16px;
+  width: 32px;
+  height: 22px;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
