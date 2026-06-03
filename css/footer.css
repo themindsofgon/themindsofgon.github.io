@@ -171,12 +171,19 @@ footer > * {
   font-weight: 700;
   letter-spacing: 0.5px;
   display: inline-block;
-  transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #d1286a 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background-position 0.4s ease;
 }
 
 .footer-nav a:hover {
-  color: #d1286a;
-  transform: scale(1.15);
+  background-position: 0% 0;
 }
 
 .footer-social {
