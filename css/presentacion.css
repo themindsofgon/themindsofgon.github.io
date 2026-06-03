@@ -24,7 +24,7 @@
 .texto {
   font-size: clamp(42px, 7vw, 90px);
   font-weight: 800;
-  color: #E8E8E8;
+  color: #C0C0C0;
   line-height: 1.1;
   letter-spacing: -2px;
 }
@@ -59,7 +59,7 @@
 
 .btn-trabajar:hover {
   background: #d1286a;
-  color: #E8E8E8;
+  color: #C0C0C0;
   box-shadow: 13px 13px 0 #111;
   animation: p5-shake 0.7s ease-in-out infinite;
 }
