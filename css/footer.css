@@ -173,18 +173,18 @@ footer > * {
   transition: color 0.2s ease;
 }
 
+.footer-nav a:visited {
+  color: #fff;
+  background: none;
+  text-decoration: none;
+}
+
 .footer-nav a:hover,
 .footer-nav a:focus,
 .footer-nav a:active {
-  color: #d1286a;
+  color: #d1286a !important;
   outline: none;
   -webkit-tap-highlight-color: transparent;
-}
-
-.footer-nav a:visited {
-  color: #fff !important;
-  background: none !important;
-  text-decoration: none !important;
 }
 
 .footer-social {
