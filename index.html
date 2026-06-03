@@ -324,7 +324,12 @@ setInterval(cambiarImagen, 4500);
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
     <script>
-        AOS.init();
+        AOS.init({
+          duration: 400,
+          delay: 0,
+          offset: 60,
+          once: true
+        });
     </script>
  
 </body>
