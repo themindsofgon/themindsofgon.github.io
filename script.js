@@ -20,6 +20,19 @@ const styleTag = document.createElement('style');
 styleTag.textContent = 'a, button, input, select, textarea, label, [role="button"], [onclick] { cursor: none !important; }';
 document.head.appendChild(styleTag);
 
+// Hover ring
+const ring = document.createElement('div');
+ring.style.cssText = `
+  position:fixed; pointer-events:none; z-index:9998;
+  width:44px; height:44px; border-radius:50%;
+  border:2px solid rgba(209,40,106,0.85);
+  transform:translate(-50%,-50%) scale(0);
+  transition:transform 0.2s cubic-bezier(.34,1.56,.64,1), opacity 0.2s ease;
+  opacity:0;
+`;
+document.body.appendChild(ring);
+let ringX = 0, ringY = 0;
+
 let isHovering = false;
 let hoverScale = 1;
 
@@ -32,8 +45,15 @@ document.querySelectorAll(clickables).forEach(el => {
 
 // Also catch dynamically added elements
 document.addEventListener('mouseover', e => {
-  if (e.target.closest(clickables)) { isHovering = true; }
-  else { isHovering = false; }
+  if (e.target.closest(clickables)) {
+    isHovering = true;
+    ring.style.transform = 'translate(-50%,-50%) scale(1)';
+    ring.style.opacity = '1';
+  } else {
+    isHovering = false;
+    ring.style.transform = 'translate(-50%,-50%) scale(0)';
+    ring.style.opacity = '0';
+  }
 });
 
 // Click burst: mini brains explode outward
@@ -71,6 +91,8 @@ document.addEventListener('mousemove', e => {
 
   cursor.style.left = e.clientX + 'px';
   cursor.style.top  = e.clientY + 'px';
+  ring.style.left = e.clientX + 'px';
+  ring.style.top  = e.clientY + 'px';
 
   trail.push({ x: e.clientX, y: e.clientY, t: performance.now() });
   if (trail.length > MAX_CLOUDS * 3) trail = trail.slice(-MAX_CLOUDS * 3);
