@@ -72,32 +72,32 @@ footer > * {
   position: relative;
 }
 
-/* Nube grande esquina superior izquierda */
+/* Nube sólida superior izquierda */
 .footer-top::before {
   content: "";
   position: absolute;
-  top: -30px;
-  left: -60px;
-  width: 280px;
-  height: 140px;
+  top: -45px;
+  left: 60px;
+  width: 220px;
+  height: 110px;
   pointer-events: none;
   z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 140'%3E%3Cg fill='white' opacity='0.25'%3E%3Cellipse cx='140' cy='110' rx='130' ry='50'/%3E%3Ccircle cx='60' cy='100' r='50'/%3E%3Ccircle cx='130' cy='68' r='64'/%3E%3Ccircle cx='210' cy='86' r='46'/%3E%3Ccircle cx='256' cy='104' r='34'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 110'%3E%3Cg fill='white'%3E%3Cellipse cx='110' cy='90' rx='100' ry='38'/%3E%3Ccircle cx='40' cy='82' r='36'/%3E%3Ccircle cx='100' cy='54' r='50'/%3E%3Ccircle cx='170' cy='70' r='36'/%3E%3Ccircle cx='206' cy='84' r='24'/%3E%3C/g%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-/* Nube grande esquina superior derecha */
+/* Nube sólida superior derecha */
 .footer-top::after {
   content: "";
   position: absolute;
-  top: -20px;
-  right: -40px;
-  width: 240px;
-  height: 120px;
+  top: -40px;
+  right: 100px;
+  width: 180px;
+  height: 90px;
   pointer-events: none;
   z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 120'%3E%3Cg fill='white' opacity='0.18'%3E%3Cellipse cx='120' cy='96' rx='110' ry='40'/%3E%3Ccircle cx='44' cy='88' r='42'/%3E%3Ccircle cx='112' cy='58' r='54'/%3E%3Ccircle cx='184' cy='74' r='38'/%3E%3Ccircle cx='222' cy='90' r='28'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 90'%3E%3Cg fill='white'%3E%3Cellipse cx='90' cy='74' rx='80' ry='30'/%3E%3Ccircle cx='32' cy='66' r='28'/%3E%3Ccircle cx='84' cy='42' r='40'/%3E%3Ccircle cx='144' cy='58' r='28'/%3E%3Ccircle cx='170' cy='70' r='18'/%3E%3C/g%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -137,17 +137,32 @@ footer > * {
   position: relative;
 }
 
-/* Nube decorativa esquina inferior derecha */
+/* Nube sólida borde derecho */
 .footer-bottom::after {
   content: "";
   position: absolute;
-  bottom: -20px;
-  right: 80px;
+  bottom: -30px;
+  right: -30px;
   width: 200px;
   height: 100px;
   pointer-events: none;
   z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cg fill='white' opacity='0.20'%3E%3Cellipse cx='100' cy='80' rx='90' ry='32'/%3E%3Ccircle cx='36' cy='72' r='34'/%3E%3Ccircle cx='94' cy='48' r='44'/%3E%3Ccircle cx='158' cy='64' r='30'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cg fill='white'%3E%3Cellipse cx='100' cy='82' rx='92' ry='34'/%3E%3Ccircle cx='34' cy='74' r='32'/%3E%3Ccircle cx='92' cy='48' r='46'/%3E%3Ccircle cx='158' cy='66' r='32'/%3E%3Ccircle cx='192' cy='78' r='20'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Nube sólida borde izquierdo */
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: -20px;
+  width: 160px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 80'%3E%3Cg fill='white'%3E%3Cellipse cx='80' cy='66' rx='72' ry='26'/%3E%3Ccircle cx='26' cy='58' r='26'/%3E%3Ccircle cx='74' cy='36' r='36'/%3E%3Ccircle cx='128' cy='52' r='24'/%3E%3C/g%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
 }
