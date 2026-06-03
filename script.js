@@ -1,3 +1,5 @@
+if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+
 const cursor = document.getElementById('cursor');
 const MAX_CLOUDS = 22;
 const clouds = [];
@@ -75,3 +77,5 @@ function animate(now) {
 }
 
 requestAnimationFrame(animate);
+
+} // end touch guard

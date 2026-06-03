@@ -11,6 +11,11 @@
   background-position: center;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  #cursor { display: none; }
+  .cloud  { display: none; }
+}
+
 .cloud {
   position: fixed;
   pointer-events: none;
