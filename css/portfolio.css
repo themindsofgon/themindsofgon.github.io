@@ -89,7 +89,7 @@
 }
 
 .proyecto-grande .proyecto-img img {
-  object-position: left center;
+  object-position: right center;
 }
 
 .proyecto-card:hover .proyecto-img img {
