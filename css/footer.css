@@ -115,6 +115,12 @@ a[href^="mailto"],
 a[href^="tel"] {
   text-decoration: none;
   color: inherit;
+  transition: color 0.2s ease;
+}
+
+a[href^="mailto"]:hover,
+a[href^="tel"]:hover {
+  color: #d1286a;
 }
 
 @media (max-width: 900px) {
