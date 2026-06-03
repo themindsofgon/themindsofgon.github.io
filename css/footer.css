@@ -80,8 +80,13 @@ footer::after {
 }
 
 .footer-wave-back {
-  animation-duration: 20s;
+  animation-duration: 14s;
   animation-direction: reverse;
+}
+
+.footer-wave-mid {
+  animation-duration: 22s;
+  animation-direction: normal;
 }
 
 @keyframes footer-wave-move {
