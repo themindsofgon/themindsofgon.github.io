@@ -194,12 +194,13 @@
 
 @media (max-width: 580px) {
   #proyectos {
-    padding: 60px 0;
+    padding: 20px 0 40px;
   }
 
   .proyectos-titulo {
     font-size: 34px;
     padding: 0 20px;
+    margin-bottom: 16px;
   }
 
   .proyectos-grid {
