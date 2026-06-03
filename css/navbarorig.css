@@ -34,7 +34,7 @@ padding: 25px;
 
 .menu{
   display:flex;
-  margin-right:50px;
+  margin-right:25px;
 }
 
 .menu li{
@@ -45,7 +45,8 @@ padding: 25px;
 .menu li a{
   color:black;
   text-decoration:none;
-  font-weight:bold;
+  font-family: 'Nunito', sans-serif;
+  font-weight:800;
   transition: all 0.5s ease;
 }
 

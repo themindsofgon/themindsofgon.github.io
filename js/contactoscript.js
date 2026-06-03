@@ -1,52 +1,32 @@
-$(document).ready(function() {
-	$('#n1').val(Math.floor(Math.random()*10+1));
-	$('#n2').val(Math.floor(Math.random()*10+1));
-	$('#contactForm').submit(function(event) {
-		$('#respuesta').fadeOut(250);
-		$.ajax({
-			url: 'sendmail.php',
-			type: 'POST',
-			data: $(this).serialize(),
-			success: function(resp) {
-				$.each($('#respuesta'), function(event) {
-					$(this).fadeIn(250);
-					$(this).html(resp);
-					if ($(this).html() == $('#nombre').val()+', ha enviado el correo de forma exitosa.') {
-						$.each($('#enviar'), function(event) {
-							$(this).attr({
-								disabled : true,
-								value : 'Enviado'
-							});
-							$(this).click(function() {
-								return false;
-							});
-						});
-					}
-				});
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				$.each($('#respuesta'), function(event) {
-					$(this).fadeIn(250);
-					$(this).html('Error, no se ha podido enviar el correo, inténtelo más tarde');
-				});
-			}
-		});
-		return false;
-	});
-	$('#descripcion').keyup(function(event) {
-		$('.caracteres').text(500 - $(this).val().length);
-		if ($(this).val().length > 500) {
-			$('.caracteres').css('color','red');
-			$('#enviar').attr('disabled',true);
-		} else {
-			$('.caracteres').css('color','green');
-			$('#enviar').attr('disabled',false);
-		}
-	});
-	$('#n1, #n2').keydown(function() {
-		return false;
-	});
-	$('#respuesta').click(function(event) {
-		$(this).fadeOut(250);
-	});
-});
+<script>
+const imagenes = [
+  'images/minds1.jpg',
+  'images/minds2.jpg',
+  'images/minds3.jpg',
+  'images/minds4.jpg',
+  'images/minds5.jpg',
+  'images/minds6.jpg',
+  'images/minds7.jpg',
+];
+
+const el = document.getElementById('contacto-left');
+let indice = 0;
+
+el.style.backgroundImage = `url('${imagenes[0]}')`;
+el.style.opacity = '1';
+
+function cambiarImagen() {
+  el.style.opacity = '0';
+  setTimeout(() => {
+    indice = (indice + 1) % imagenes.length;
+    const img = new Image();
+    img.src = imagenes[indice];
+    img.onload = () => {
+      el.style.backgroundImage = `url('${imagenes[indice]}')`;
+      el.style.opacity = '1';
+    };
+  }, 800);
+}
+
+setInterval(cambiarImagen, 5000);
+</script>

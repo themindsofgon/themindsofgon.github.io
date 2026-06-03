@@ -1,0 +1,23 @@
+#cursor {
+  position: fixed;
+  width: 42px;
+  height: 29px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background-image: url('images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cloud {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  background-image: url('images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

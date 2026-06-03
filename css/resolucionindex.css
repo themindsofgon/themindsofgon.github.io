@@ -1,11 +1,22 @@
                                                                             /* INDEX */
 /* MOVIL */
 @media screen and (max-width:810px){
-    .texto{
+    .cabecera{
+        padding: 60px 18px 40px;
+        gap: 22px;
+    }
 
-        margin-top:130px;
-    width:100%;
-    font-size:28px;
+    .texto{
+        margin-top: 20px;
+        width: 100%;
+        font-size: clamp(40px, 12vw, 60px);
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+    }
+
+    .btn-trabajar{
+        padding: 18px 46px;
+        font-size: 16px;
     }
 
     .trabajaconmigo{
@@ -15,9 +26,8 @@
     }
    
     .logo img{
-        margin-left: auto;
-    
-            }
+        margin-left: 0;
+    }
 
 }
 

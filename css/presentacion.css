@@ -1,0 +1,106 @@
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.cabecera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px 30px;
+  gap: 16px;
+}
+
+.cabecera-sub {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d1286a;
+}
+
+.texto {
+  font-size: clamp(42px, 7vw, 90px);
+  font-weight: 800;
+  color: #111;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.texto span {
+  color: #d1286a;
+}
+
+.btn-trabajar {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 22px 64px;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 8px;
+  text-decoration: none;
+  transform: skewX(-8deg);
+  box-shadow: 9px 9px 0 #d1286a;
+  animation: p5-jitter 2.6s ease-in-out infinite;
+  transition: box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+/* El texto se contra-inclina para quedar recto dentro del botón inclinado */
+.btn-trabajar span {
+  display: inline-block;
+  transform: skewX(8deg);
+}
+
+.btn-trabajar:hover {
+  background: #d1286a;
+  color: #111;
+  box-shadow: 13px 13px 0 #111;
+  animation: p5-shake 0.7s ease-in-out infinite;
+}
+
+.btn-trabajar:active {
+  box-shadow: 4px 4px 0 #111;
+}
+
+/* Vibración sutil constante, estilo menú Persona 5 */
+@keyframes p5-jitter {
+  0%, 100% { transform: skewX(-8deg) translate(0, 0) rotate(0deg); }
+  25%      { transform: skewX(-8deg) translate(-1px, 1px) rotate(-0.4deg); }
+  50%      { transform: skewX(-8deg) translate(1px, -1px) rotate(0.4deg); }
+  75%      { transform: skewX(-8deg) translate(-1px, 0) rotate(-0.2deg); }
+}
+
+/* Sacudida más nerviosa al pasar el ratón */
+@keyframes p5-shake {
+  0%, 100% { transform: skewX(-8deg) translate(0, 0) rotate(0deg); }
+  25%      { transform: skewX(-8deg) translate(-1px, 0.5px) rotate(-0.4deg); }
+  50%      { transform: skewX(-8deg) translate(1px, -0.5px) rotate(0.4deg); }
+  75%      { transform: skewX(-8deg) translate(-0.5px, 0) rotate(-0.2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-trabajar { animation: none; }
+  .btn-trabajar:hover { animation: none; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

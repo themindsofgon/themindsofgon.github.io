@@ -110,3 +110,60 @@
 }
 
 
+/* Móvil: mostrar los enlaces del menú a la derecha (sin hamburguesa) */
+@media screen and (max-width: 800px){
+
+    .menu #btn_menu{
+        display: none;
+    }
+
+    #back_menu{
+        display: none !important;
+    }
+
+    .nav{
+        padding-left: 25px;
+        padding-right: 10px;
+    }
+
+    .menu{
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .menu ul li:last-child{
+        margin-right: 0;
+    }
+
+    .menu nav{
+        position: static;
+        right: auto;
+        top: auto;
+        background: transparent;
+        width: auto;
+        height: auto;
+        padding: 0;
+        flex-direction: row;
+    }
+
+    .menu nav img{
+        display: none;
+    }
+
+    .menu ul{
+        flex-direction: row;
+        margin: 0;
+        align-items: center;
+    }
+
+    .menu ul li{
+        margin-top: 0;
+        margin-left: 18px;
+    }
+
+    .menu ul li a{
+        font-size: 15px;
+    }
+}
+
+

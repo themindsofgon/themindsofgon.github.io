@@ -1,0 +1,63 @@
+/* ===========================================================
+   Fondo de cielo con nubes estilo anime.
+   Cielo en degradado + dos capas de nubes blancas, suaves y
+   espaciadas de forma irregular, moviéndose a distinta
+   velocidad (parallax). Detrás de todo el contenido.
+   =========================================================== */
+
+body {
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* Capas de nubes ancladas arriba (zona del hero), se desvanecen hacia abajo
+   y NO reaparecen al seguir bajando */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1450px;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: repeat;
+  /* Se desvanecen verticalmente antes de llegar a los proyectos */
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, rgba(0,0,0,0.4) 70%, transparent 92%);
+          mask-image: linear-gradient(to bottom, #000 45%, rgba(0,0,0,0.4) 70%, transparent 92%);
+}
+
+/* Capa trasera: nubes grandes, tenues, movimiento lento */
+body::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='760' height='520' viewBox='0 0 760 520'%3E%3Cdefs%3E%3Cfilter id='b' x='-60%25' y='-60%25' width='220%25' height='220%25'%3E%3CfeGaussianBlur stdDeviation='0'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='%23dde8f3' filter='url(%23b)'%3E%3Cg transform='translate(80,90) scale(1.3)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(470,310) scale(1.1)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 760px auto;
+  opacity: 0.12;
+  animation: nubes-drift-lento 14s linear infinite;
+}
+
+/* Capa delantera: nubes medianas, más blancas, movimiento más rápido */
+body::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='420' viewBox='0 0 600 420'%3E%3Cdefs%3E%3Cfilter id='b' x='-60%25' y='-60%25' width='220%25' height='220%25'%3E%3CfeGaussianBlur stdDeviation='0'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='%23c9d9ec' filter='url(%23b)'%3E%3Cg transform='translate(360,60) scale(0.95)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(60,250) scale(0.8)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 600px auto;
+  opacity: 0.16;
+  animation: nubes-drift-rapido 8s linear infinite;
+}
+
+@keyframes nubes-drift-lento {
+  from { background-position: 0 0; }
+  to   { background-position: 760px 0; }
+}
+
+@keyframes nubes-drift-rapido {
+  from { background-position: 0 0; }
+  to   { background-position: 600px 0; }
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
