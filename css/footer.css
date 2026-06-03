@@ -182,7 +182,9 @@ footer > * {
 }
 
 .footer-nav a:visited {
-  color: #fff;
+  color: #fff !important;
+  background: none !important;
+  text-decoration: none !important;
 }
 
 .footer-social {
