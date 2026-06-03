@@ -69,11 +69,11 @@ function animate(now) {
   cursor.style.height = breathH + 'px';
 
   const wiggle = isHovering ? Math.sin(now * 0.008) * 12 : 0;
-  const glowPulse = isHovering ? 6 + Math.sin(now * 0.006) * 3 : 0;
+  const glowPulse = isHovering ? 14 + Math.sin(now * 0.006) * 6 : 0;
   const glow = glowAmount * glowPulse;
   cursor.style.transform = `translate(-50%, -50%) rotate(${wiggle}deg)`;
   cursor.style.filter = glow > 0.1
-    ? `drop-shadow(0 0 ${glow}px rgba(209,40,106,0.9)) drop-shadow(0 0 ${glow * 1.8}px rgba(209,40,106,0.5))`
+    ? `drop-shadow(0 0 ${glow}px rgba(209,40,106,1)) drop-shadow(0 0 ${glow * 2}px rgba(209,40,106,0.7)) drop-shadow(0 0 ${glow * 3}px rgba(209,40,106,0.3))`
     : 'none';
 
   velX *= 0.75;
