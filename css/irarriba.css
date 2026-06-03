@@ -40,3 +40,9 @@
 #button-up:hover::before {
     transform: rotate(45deg) translate(-2px, -2px);
 }
+
+@media (max-width: 768px) {
+    #button-up {
+        right: 8px;
+    }
+}
