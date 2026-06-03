@@ -83,24 +83,13 @@
   border-radius: 0;
   padding: 0;
   width: fit-content;
-  transition: color 0.3s;
+  transition: color 0.2s ease, transform 0.2s ease;
   margin-top: 8px;
-  position: relative;
 }
 
-.contacto-email::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #d1286a;
-  transition: width 0.25s ease;
-}
-
-.contacto-email:hover::after {
-  width: 100%;
+.contacto-email:hover {
+  color: #d1286a;
+  transform: translateY(-3px);
 }
 
 .contacto-email:hover {

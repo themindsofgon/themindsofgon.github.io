@@ -170,27 +170,13 @@ footer > * {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  transition: color 0.2s ease;
-  position: relative;
-}
-
-.footer-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #d1286a;
-  transition: width 0.25s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 .footer-nav a:hover {
   color: #d1286a;
-}
-
-.footer-nav a:hover::after {
-  width: 100%;
+  transform: translateY(-3px);
 }
 
 .footer-social {
