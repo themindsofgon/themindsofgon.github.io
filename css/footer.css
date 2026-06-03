@@ -199,8 +199,8 @@ footer > * {
 
 .footer-social a:hover {
   background: none;
-  color: #fff;
-  opacity: 0.7;
+  color: #d1286a;
+  opacity: 1;
 }
 
 .footer-social a:focus {
