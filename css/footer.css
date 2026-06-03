@@ -130,7 +130,7 @@ footer > * {
   align-items: center;
   gap: 14px;
   font-family: 'Nunito', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.5px;
   color: #fff;
@@ -180,7 +180,7 @@ footer > * {
 
 .footer-social {
   display: flex;
-  gap: 8px;
+  gap: 20px;
 }
 
 .footer-social a {
@@ -209,8 +209,8 @@ footer > * {
 }
 
 .footer-social svg {
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
