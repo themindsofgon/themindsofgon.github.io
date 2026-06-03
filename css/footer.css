@@ -187,11 +187,11 @@ footer > * {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  background: rgba(255,255,255,0.2);
+  width: auto;
+  height: auto;
+  background: none;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 0;
   border: none !important;
   transition: background 0.2s ease;
   outline: none !important;
