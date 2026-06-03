@@ -206,20 +206,20 @@
   }
 
   .proyectos-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    grid-auto-rows: 240px;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: unset !important;
+    grid-auto-rows: 240px !important;
     padding: 0 12px;
-    gap: 20px !important;
+    gap: 16px !important;
   }
 
   .proyecto-card,
   .proyecto-grande,
   .proyecto-tall {
-    grid-column: auto !important;
+    grid-column: 1 !important;
     grid-row: auto !important;
-    height: 240px;
-    margin-bottom: 24px;
+    height: 240px !important;
+    margin: 0 !important;
   }
 
   .proyecto-overlay {
