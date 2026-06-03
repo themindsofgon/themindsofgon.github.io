@@ -207,11 +207,19 @@ footer > * {
   box-shadow: none !important;
 }
 
-.footer-social a:hover {
+.footer-social a:visited {
+  color: #fff;
+}
+
+.footer-social a:hover,
+.footer-social a:focus,
+.footer-social a:active {
   background: none;
-  color: #d1286a;
+  color: #d1286a !important;
   opacity: 1;
   transform: translateY(-3px);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer-social a:focus {
