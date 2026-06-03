@@ -11,6 +11,9 @@ footer {
   overflow: hidden;
   border-top: none;
   position: relative;
+  border-radius: 0;
+  border-radius: 0 0 40px 40px;
+  padding-top: 0;
 }
 
 footer::before,
@@ -50,6 +53,38 @@ footer::after {
 @keyframes footer-clouds-fast {
   from { background-position: 0 bottom; }
   to   { background-position: 500px bottom; }
+}
+
+.footer-cloud-divider {
+  background: #3AAEDE;
+  margin: 0 70px -2px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .footer-cloud-divider {
+    margin: 0 20px -2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-cloud-divider {
+    margin: 0 0 -2px;
+  }
+}
+
+.footer-wave-anim {
+  animation: footer-wave-move 35s linear infinite;
+}
+
+.footer-wave-back {
+  animation-duration: 20s;
+  animation-direction: reverse;
+}
+
+@keyframes footer-wave-move {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .footer-wave {
@@ -203,8 +238,9 @@ a[href^="tel"]:hover {
     width: 100%;
   }
   .footer-top {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     padding: 20px 20px;
   }
 
@@ -213,6 +249,10 @@ a[href^="tel"]:hover {
     gap: 16px;
     align-items: center;
     padding: 16px 20px;
+  }
+
+  .footer-nav a {
+    font-size: 17px;
   }
 
   .footer-nav {
