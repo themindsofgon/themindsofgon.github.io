@@ -217,6 +217,7 @@
     grid-column: auto !important;
     grid-row: auto !important;
     height: 240px;
+    margin-bottom: 16px;
   }
 
   .proyecto-overlay {
