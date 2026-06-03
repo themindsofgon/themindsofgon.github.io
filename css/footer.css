@@ -6,7 +6,7 @@ footer {
   margin: 0 70px;
   width: calc(100% - 140px);
   box-sizing: border-box;
-  background: linear-gradient(to bottom, #87CEEB 0%, #3AAEDE 50%, #1a8bbf 100%);
+  background: #3AAEDE;
   color: #fff;
   overflow: hidden;
   border-top: 4px solid #d1286a;
