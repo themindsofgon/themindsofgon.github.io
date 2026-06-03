@@ -54,6 +54,15 @@ body::after {
   to   { background-position: 600px 0; }
 }
 
+@media (max-width: 768px) {
+  body::before,
+  body::after {
+    height: 2800px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, rgba(0,0,0,0.4) 80%, transparent 95%);
+            mask-image: linear-gradient(to bottom, #000 60%, rgba(0,0,0,0.4) 80%, transparent 95%);
+  }
+}
+
 /* Respeta a quien prefiere menos movimiento */
 @media (prefers-reduced-motion: reduce) {
   body::before,
