@@ -115,10 +115,7 @@
   overflow: hidden;
   position: relative;
   background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 120px;
+  /* Sin altura fija: crece con la imagen para mostrarla completa */
 }
 
 .pv-img {
