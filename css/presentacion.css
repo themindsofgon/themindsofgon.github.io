@@ -64,6 +64,10 @@
   animation: p5-shake 0.7s ease-in-out infinite;
 }
 
+.btn-trabajar:visited {
+  color: #fff;
+}
+
 .btn-trabajar:active {
   box-shadow: 4px 4px 0 #111;
 }
