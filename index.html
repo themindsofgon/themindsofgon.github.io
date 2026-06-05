@@ -18,6 +18,7 @@
      <link rel="stylesheet" href="css/portfolio.css?v=5"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fondo-nubes.css">
+    <link rel="stylesheet" href="css/preview-modal.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,39 +86,39 @@
   <div class="proyectos-grid">
 
     <div class="proyecto-card proyecto-grande" data-aos="fade-up" data-aos-delay="100">
-      <a class="proyecto-link" href="https://www.behance.net/gallery/245857543/Disenos-Tiendas-Pokemon-TCG" target="_blank" rel="noopener noreferrer" aria-label="Diseños Tiendas Pokémon TCG"></a>
+      <a class="proyecto-link" href="#" onclick="abrirPreview('pokemon');return false;" aria-label="Diseños Tiendas Pokémon TCG"></a>
       <div class="proyecto-img">
         <img src="images/pokemon-tcg.png" alt="Diseños Tiendas Pokémon TCG">
         <div class="proyecto-overlay">
           <div class="overlay-content">
             <h3>Tiendas Pokémon TCG</h3>
-            <a href="https://www.behance.net/gallery/245857543/Disenos-Tiendas-Pokemon-TCG" target="_blank">Ver proyecto →</a>
+            <span class="ver-preview-btn">Ver proyecto →</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="proyecto-card proyecto-tall" data-aos="fade-up" data-aos-delay="200">
-      <a class="proyecto-link" href="https://www.behance.net/gallery/250502393/Disenos-de-portadas-musicales" target="_blank" rel="noopener noreferrer" aria-label="Diseños de portadas musicales"></a>
+      <a class="proyecto-link" href="#" onclick="abrirPreview('portadas');return false;" aria-label="Diseños de portadas musicales"></a>
       <div class="proyecto-img">
         <img src="images/matamos.jpg" alt="Diseños de portadas musicales">
         <div class="proyecto-overlay">
           <div class="overlay-content">
             <h3>Portadas musicales</h3>
-            <a href="https://www.behance.net/gallery/250502393/Disenos-de-portadas-musicales" target="_blank">Ver proyecto →</a>
+            <span class="ver-preview-btn">Ver proyecto →</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="proyecto-card" data-aos="fade-up" data-aos-delay="300">
-      <a class="proyecto-link" href="https://www.behance.net/gallery/156935775/Rels-B-Pa-quererte" target="_blank" rel="noopener noreferrer" aria-label="Pa Quererte"></a>
+      <a class="proyecto-link" href="#" onclick="abrirPreview('paquererte');return false;" aria-label="Pa Quererte"></a>
       <div class="proyecto-img">
         <img src="images/proyecto1.jpg" alt="Pa Quererte">
         <div class="proyecto-overlay">
           <div class="overlay-content">
             <h3>Pa Quererte</h3>
-            <a href="https://www.behance.net/gallery/156935775/Rels-B-Pa-quererte" target="_blank">Ver proyecto →</a>
+            <span class="ver-preview-btn">Ver proyecto →</span>
           </div>
         </div>
       </div>
@@ -249,6 +250,92 @@ function cambiarImagen() {
 
 setInterval(cambiarImagen, 4500);
 </script>
+
+<script>
+const proyectos = {
+  pokemon: {
+    titulo: 'Tiendas Pokémon TCG',
+    behance: 'https://www.behance.net/gallery/245857543/Disenos-Tiendas-Pokemon-TCG',
+    imagenes: [
+      'images/imgsbehance/Tiendas Pokemon TCG/1.png',
+      'images/imgsbehance/Tiendas Pokemon TCG/2.png',
+      'images/imgsbehance/Tiendas Pokemon TCG/3.png',
+      'images/imgsbehance/Tiendas Pokemon TCG/4.png',
+      'images/imgsbehance/Tiendas Pokemon TCG/5.png',
+    ]
+  },
+  portadas: {
+    titulo: 'Portadas musicales',
+    behance: 'https://www.behance.net/gallery/250502393/Disenos-de-portadas-musicales',
+    imagenes: [
+      'images/imgsbehance/Portadas Musicales/1.jpg',
+      'images/imgsbehance/Portadas Musicales/2.jpg',
+      'images/imgsbehance/Portadas Musicales/3.jpg',
+    ]
+  },
+  paquererte: {
+    titulo: 'Pa Quererte',
+    behance: 'https://www.behance.net/gallery/156935775/Rels-B-Pa-quererte',
+    imagenes: [
+      'images/imgsbehance/Pa Quererte/1.jpg',
+      'images/imgsbehance/Pa Quererte/2.jpg',
+      'images/imgsbehance/Pa Quererte/3.jpg',
+      'images/imgsbehance/Pa Quererte/4.jpg',
+      'images/imgsbehance/Pa Quererte/5.jpg',
+      'images/imgsbehance/Pa Quererte/6.jpg',
+      'images/imgsbehance/Pa Quererte/7.jpg',
+    ]
+  }
+};
+
+function abrirPreview(id) {
+  const p = proyectos[id];
+  document.getElementById('preview-titulo').textContent = p.titulo;
+  document.getElementById('preview-behance-btn').href = p.behance;
+  const scroll = document.getElementById('preview-scroll');
+  scroll.innerHTML = '';
+  p.imagenes.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = p.titulo;
+    img.className = 'preview-img';
+    scroll.appendChild(img);
+  });
+  scroll.scrollTop = 0;
+  document.getElementById('preview-modal').classList.add('activo');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarPreview() {
+  document.getElementById('preview-modal').classList.remove('activo');
+  document.body.style.overflow = '';
+}
+
+function cerrarPreviewFuera(e) {
+  if (e.target === document.getElementById('preview-modal')) cerrarPreview();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') cerrarPreview();
+});
+</script>
+
+<!-- MODAL PREVIEW PROYECTOS -->
+<div id="preview-modal" class="preview-modal" onclick="cerrarPreviewFuera(event)">
+  <div class="preview-modal-inner">
+    <button class="preview-cerrar" onclick="cerrarPreview()" aria-label="Cerrar">&#x2715;</button>
+    <div class="preview-titulo-wrap">
+      <h2 id="preview-titulo" class="preview-titulo"></h2>
+    </div>
+    <div class="preview-scroll" id="preview-scroll"></div>
+    <div class="preview-footer">
+      <a id="preview-behance-btn" href="#" target="_blank" rel="noopener noreferrer" class="preview-behance-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.221 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+        Ver en Behance
+      </a>
+    </div>
+  </div>
+</div>
 
     <!-- IR ARRIBA -->
     <div id="button-up">
