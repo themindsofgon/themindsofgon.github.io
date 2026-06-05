@@ -135,8 +135,10 @@
 .preview-behance-btn:visited {
   color: #fff;
 }
-.preview-behance-btn:hover {
+.preview-behance-btn:hover,
+.preview-behance-btn:visited:hover {
   background: #053eff;
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(5,62,255,0.3);
 }
