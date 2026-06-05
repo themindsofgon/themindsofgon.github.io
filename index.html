@@ -344,12 +344,24 @@ function cerrarLightbox() {
   document.getElementById('pv-lightbox').classList.remove('activo');
 }
 
+function lbClamp() {
+  const img = document.getElementById('pv-lb-img');
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const iw = img.clientWidth * lbScale;
+  const ih = img.clientHeight * lbScale;
+  const maxTx = Math.max(0, (iw - vw) / 2);
+  const maxTy = Math.max(0, (ih - vh) / 2);
+  lbTx = Math.max(-maxTx, Math.min(maxTx, lbTx));
+  lbTy = Math.max(-maxTy, Math.min(maxTy, lbTy));
+}
+
 function lbApply(animate) {
   const img = document.getElementById('pv-lb-img');
   const label = document.getElementById('pv-lb-label');
+  lbClamp();
   img.style.transition = animate ? 'transform 0.2s ease' : 'none';
   img.style.transform = `translate(${lbTx}px,${lbTy}px) scale(${lbScale})`;
-  img.style.cursor = lbScale > 1 ? 'grab' : 'grab';
+  img.style.cursor = 'grab';
   label.textContent = Math.round(lbScale * 100) + '%';
 }
 

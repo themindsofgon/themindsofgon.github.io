@@ -155,7 +155,7 @@
   background: rgba(0,0,0,0.93);
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; /* impide que la imagen salga de la pantalla */
 }
 .pv-lightbox.activo {
   display: flex;
