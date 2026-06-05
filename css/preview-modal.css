@@ -132,6 +132,9 @@
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   letter-spacing: 0.5px;
 }
+.preview-behance-btn:visited {
+  color: #fff;
+}
 .preview-behance-btn:hover {
   background: #053eff;
   transform: translateY(-2px);
