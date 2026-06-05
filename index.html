@@ -295,19 +295,106 @@ function abrirPreview(id) {
   const scroll = document.getElementById('preview-scroll');
   scroll.innerHTML = '';
   p.imagenes.forEach(src => {
-    const wrap = document.createElement('div');
-    wrap.className = 'preview-img-wrap';
+    const item = document.createElement('div');
+    item.className = 'pv-item';
+
+    const viewport = document.createElement('div');
+    viewport.className = 'pv-viewport';
+
     const img = document.createElement('img');
     img.src = src;
     img.alt = p.titulo;
-    img.className = 'preview-img';
-    wrap.appendChild(img);
-    wrap.addEventListener('click', () => abrirZoom(src));
-    scroll.appendChild(wrap);
+    img.className = 'pv-img';
+    img.draggable = false;
+
+    viewport.appendChild(img);
+
+    const controls = document.createElement('div');
+    controls.className = 'pv-controls';
+    controls.innerHTML = `
+      <button class="pv-btn" data-action="out" title="Reducir">&#x2212;</button>
+      <span class="pv-zoom-label">100%</span>
+      <button class="pv-btn" data-action="in" title="Ampliar">&#x2b;</button>
+      <button class="pv-btn pv-reset" data-action="reset" title="Restablecer">&#x21ba;</button>
+    `;
+
+    item.appendChild(viewport);
+    item.appendChild(controls);
+    scroll.appendChild(item);
+
+    initZoomPan(viewport, img, controls);
   });
   scroll.scrollTop = 0;
   document.getElementById('preview-modal').classList.add('activo');
   document.body.style.overflow = 'hidden';
+}
+
+function initZoomPan(viewport, img, controls) {
+  let scale = 1, tx = 0, ty = 0;
+  let dragging = false, startX, startY, startTx, startTy;
+  const label = controls.querySelector('.pv-zoom-label');
+  const MIN = 1, MAX = 4, STEP = 0.4;
+
+  function apply(animate) {
+    img.style.transition = animate ? 'transform 0.2s ease' : 'none';
+    img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+    label.textContent = Math.round(scale * 100) + '%';
+    viewport.style.cursor = scale > 1 ? 'grab' : 'default';
+  }
+
+  function clampTranslation() {
+    const vw = viewport.clientWidth, vh = viewport.clientHeight;
+    const iw = img.naturalWidth || img.clientWidth;
+    const ih = img.naturalHeight || img.clientHeight;
+    const maxTx = Math.max(0, (iw * scale - vw) / 2);
+    const maxTy = Math.max(0, (ih * scale - vh) / 2);
+    tx = Math.max(-maxTx, Math.min(maxTx, tx));
+    ty = Math.max(-maxTy, Math.min(maxTy, ty));
+  }
+
+  controls.addEventListener('click', e => {
+    const action = e.target.dataset.action;
+    if (!action) return;
+    if (action === 'in')    scale = Math.min(MAX, parseFloat((scale + STEP).toFixed(2)));
+    if (action === 'out')   scale = Math.max(MIN, parseFloat((scale - STEP).toFixed(2)));
+    if (action === 'reset') { scale = 1; tx = 0; ty = 0; }
+    if (scale === 1) { tx = 0; ty = 0; }
+    clampTranslation();
+    apply(true);
+  });
+
+  viewport.addEventListener('wheel', e => {
+    e.preventDefault();
+    scale = e.deltaY < 0
+      ? Math.min(MAX, parseFloat((scale + 0.15).toFixed(2)))
+      : Math.max(MIN, parseFloat((scale - 0.15).toFixed(2)));
+    if (scale === 1) { tx = 0; ty = 0; }
+    clampTranslation();
+    apply(false);
+  }, { passive: false });
+
+  viewport.addEventListener('mousedown', e => {
+    if (scale <= 1) return;
+    dragging = true;
+    startX = e.clientX; startY = e.clientY;
+    startTx = tx; startTy = ty;
+    viewport.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    tx = startTx + (e.clientX - startX);
+    ty = startTy + (e.clientY - startY);
+    clampTranslation();
+    apply(false);
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    viewport.style.cursor = scale > 1 ? 'grab' : 'default';
+  });
 }
 
 function cerrarPreview() {
@@ -319,24 +406,8 @@ function cerrarPreviewFuera(e) {
   if (e.target === document.getElementById('preview-modal')) cerrarPreview();
 }
 
-function abrirZoom(src) {
-  const overlay = document.getElementById('preview-zoom-overlay');
-  document.getElementById('preview-zoom-img').src = src;
-  overlay.classList.add('activo');
-}
-
-function cerrarZoom() {
-  document.getElementById('preview-zoom-overlay').classList.remove('activo');
-}
-
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    if (document.getElementById('preview-zoom-overlay').classList.contains('activo')) {
-      cerrarZoom();
-    } else {
-      cerrarPreview();
-    }
-  }
+  if (e.key === 'Escape') cerrarPreview();
 });
 </script>
 
@@ -355,11 +426,6 @@ document.addEventListener('keydown', e => {
       </a>
     </div>
   </div>
-</div>
-
-<!-- ZOOM LIGHTBOX -->
-<div id="preview-zoom-overlay" class="preview-zoom-overlay" onclick="cerrarZoom()">
-  <img id="preview-zoom-img" src="" alt="Zoom">
 </div>
 
     <!-- IR ARRIBA -->
