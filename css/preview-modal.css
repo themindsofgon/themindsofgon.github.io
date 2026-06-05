@@ -99,16 +99,19 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.07);
   cursor: zoom-in;
   transition: box-shadow 0.2s;
-  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pv-item:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.14); }
 
 .pv-img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
   height: auto;
   display: block;
   user-select: none;
-  vertical-align: top;
 }
 
 /* ── FOOTER ── */
