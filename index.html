@@ -288,6 +288,7 @@ const proyectos = {
   }
 };
 
+// ── PREVIEW MODAL ──
 function abrirPreview(id) {
   const p = proyectos[id];
   document.getElementById('preview-titulo').textContent = p.titulo;
@@ -297,104 +298,19 @@ function abrirPreview(id) {
   p.imagenes.forEach(src => {
     const item = document.createElement('div');
     item.className = 'pv-item';
-
-    const viewport = document.createElement('div');
-    viewport.className = 'pv-viewport';
-
     const img = document.createElement('img');
     img.src = src;
     img.alt = p.titulo;
     img.className = 'pv-img';
     img.draggable = false;
-
-    viewport.appendChild(img);
-
-    const controls = document.createElement('div');
-    controls.className = 'pv-controls';
-    controls.innerHTML = `
-      <button class="pv-btn" data-action="out" title="Reducir">&#x2212;</button>
-      <span class="pv-zoom-label">100%</span>
-      <button class="pv-btn" data-action="in" title="Ampliar">&#x2b;</button>
-      <button class="pv-btn pv-reset" data-action="reset" title="Restablecer">&#x21ba;</button>
-    `;
-
-    item.appendChild(viewport);
-    item.appendChild(controls);
+    img.title = 'Clic para ampliar';
+    img.addEventListener('click', () => abrirLightbox(src));
+    item.appendChild(img);
     scroll.appendChild(item);
-
-    initZoomPan(viewport, img, controls);
   });
   scroll.scrollTop = 0;
   document.getElementById('preview-modal').classList.add('activo');
   document.body.style.overflow = 'hidden';
-}
-
-function initZoomPan(viewport, img, controls) {
-  let scale = 1, tx = 0, ty = 0;
-  let dragging = false, startX, startY, startTx, startTy;
-  const label = controls.querySelector('.pv-zoom-label');
-  const MIN = 1, MAX = 4, STEP = 0.4;
-
-  function apply(animate) {
-    img.style.transition = animate ? 'transform 0.2s ease' : 'none';
-    img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
-    label.textContent = Math.round(scale * 100) + '%';
-    viewport.style.cursor = scale > 1 ? 'grab' : 'default';
-  }
-
-  function clampTranslation() {
-    const vw = viewport.clientWidth, vh = viewport.clientHeight;
-    const iw = img.naturalWidth || img.clientWidth;
-    const ih = img.naturalHeight || img.clientHeight;
-    const maxTx = Math.max(0, (iw * scale - vw) / 2);
-    const maxTy = Math.max(0, (ih * scale - vh) / 2);
-    tx = Math.max(-maxTx, Math.min(maxTx, tx));
-    ty = Math.max(-maxTy, Math.min(maxTy, ty));
-  }
-
-  controls.addEventListener('click', e => {
-    const action = e.target.dataset.action;
-    if (!action) return;
-    if (action === 'in')    scale = Math.min(MAX, parseFloat((scale + STEP).toFixed(2)));
-    if (action === 'out')   scale = Math.max(MIN, parseFloat((scale - STEP).toFixed(2)));
-    if (action === 'reset') { scale = 1; tx = 0; ty = 0; }
-    if (scale === 1) { tx = 0; ty = 0; }
-    clampTranslation();
-    apply(true);
-  });
-
-  viewport.addEventListener('wheel', e => {
-    e.preventDefault();
-    scale = e.deltaY < 0
-      ? Math.min(MAX, parseFloat((scale + 0.15).toFixed(2)))
-      : Math.max(MIN, parseFloat((scale - 0.15).toFixed(2)));
-    if (scale === 1) { tx = 0; ty = 0; }
-    clampTranslation();
-    apply(false);
-  }, { passive: false });
-
-  viewport.addEventListener('mousedown', e => {
-    if (scale <= 1) return;
-    dragging = true;
-    startX = e.clientX; startY = e.clientY;
-    startTx = tx; startTy = ty;
-    viewport.style.cursor = 'grabbing';
-    e.preventDefault();
-  });
-
-  window.addEventListener('mousemove', e => {
-    if (!dragging) return;
-    tx = startTx + (e.clientX - startX);
-    ty = startTy + (e.clientY - startY);
-    clampTranslation();
-    apply(false);
-  });
-
-  window.addEventListener('mouseup', () => {
-    if (!dragging) return;
-    dragging = false;
-    viewport.style.cursor = scale > 1 ? 'grab' : 'default';
-  });
 }
 
 function cerrarPreview() {
@@ -406,8 +322,98 @@ function cerrarPreviewFuera(e) {
   if (e.target === document.getElementById('preview-modal')) cerrarPreview();
 }
 
+// ── LIGHTBOX CON ZOOM+PAN ──
+let lbScale = 1, lbTx = 0, lbTy = 0;
+let lbDragging = false, lbStartX, lbStartY, lbStartTx, lbStartTy;
+const LB_MIN = 0.5, LB_MAX = 5, LB_STEP = 0.4;
+
+function abrirLightbox(src) {
+  lbScale = 1; lbTx = 0; lbTy = 0;
+  const lb = document.getElementById('pv-lightbox');
+  const img = document.getElementById('pv-lb-img');
+  const label = document.getElementById('pv-lb-label');
+  img.src = src;
+  img.style.transform = 'translate(0,0) scale(1)';
+  img.style.transition = 'none';
+  img.style.cursor = 'grab';
+  label.textContent = '100%';
+  lb.classList.add('activo');
+}
+
+function cerrarLightbox() {
+  document.getElementById('pv-lightbox').classList.remove('activo');
+}
+
+function lbApply(animate) {
+  const img = document.getElementById('pv-lb-img');
+  const label = document.getElementById('pv-lb-label');
+  img.style.transition = animate ? 'transform 0.2s ease' : 'none';
+  img.style.transform = `translate(${lbTx}px,${lbTy}px) scale(${lbScale})`;
+  img.style.cursor = lbScale > 1 ? 'grab' : 'grab';
+  label.textContent = Math.round(lbScale * 100) + '%';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lb = document.getElementById('pv-lightbox');
+  const img = document.getElementById('pv-lb-img');
+
+  // Botones
+  document.getElementById('pv-lb-in').addEventListener('click', () => {
+    lbScale = Math.min(LB_MAX, parseFloat((lbScale + LB_STEP).toFixed(2)));
+    lbApply(true);
+  });
+  document.getElementById('pv-lb-out').addEventListener('click', () => {
+    lbScale = Math.max(LB_MIN, parseFloat((lbScale - LB_STEP).toFixed(2)));
+    lbApply(true);
+  });
+  document.getElementById('pv-lb-reset').addEventListener('click', () => {
+    lbScale = 1; lbTx = 0; lbTy = 0;
+    lbApply(true);
+  });
+
+  // Rueda del ratón
+  lb.addEventListener('wheel', e => {
+    e.preventDefault();
+    lbScale = e.deltaY < 0
+      ? Math.min(LB_MAX, parseFloat((lbScale + 0.15).toFixed(2)))
+      : Math.max(LB_MIN, parseFloat((lbScale - 0.15).toFixed(2)));
+    lbApply(false);
+  }, { passive: false });
+
+  // Arrastre
+  img.addEventListener('mousedown', e => {
+    lbDragging = true;
+    lbStartX = e.clientX; lbStartY = e.clientY;
+    lbStartTx = lbTx; lbStartTy = lbTy;
+    img.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+  window.addEventListener('mousemove', e => {
+    if (!lbDragging) return;
+    lbTx = lbStartTx + (e.clientX - lbStartX);
+    lbTy = lbStartTy + (e.clientY - lbStartY);
+    lbApply(false);
+  });
+  window.addEventListener('mouseup', () => {
+    if (!lbDragging) return;
+    lbDragging = false;
+    img.style.cursor = 'grab';
+  });
+
+  // Cerrar al hacer clic en el fondo
+  lb.addEventListener('click', e => {
+    if (e.target === lb) cerrarLightbox();
+  });
+});
+
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') cerrarPreview();
+  if (e.key === 'Escape') {
+    if (document.getElementById('pv-lightbox').classList.contains('activo')) {
+      cerrarLightbox();
+    } else {
+      cerrarPreview();
+    }
+  }
 });
 </script>
 
@@ -426,6 +432,18 @@ document.addEventListener('keydown', e => {
       </a>
     </div>
   </div>
+</div>
+
+<!-- LIGHTBOX ZOOM -->
+<div id="pv-lightbox" class="pv-lightbox">
+  <div class="pv-lb-bar">
+    <button id="pv-lb-out" class="pv-lb-btn" title="Reducir">&#x2212;</button>
+    <span id="pv-lb-label" class="pv-lb-label">100%</span>
+    <button id="pv-lb-in" class="pv-lb-btn" title="Ampliar">&#x2b;</button>
+    <button id="pv-lb-reset" class="pv-lb-btn" title="Restablecer">&#x21ba;</button>
+    <button class="pv-lb-btn pv-lb-cerrar" onclick="cerrarLightbox()" title="Cerrar">&#x2715;</button>
+  </div>
+  <img id="pv-lb-img" src="" alt="Zoom" draggable="false">
 </div>
 
     <!-- IR ARRIBA -->
