@@ -9,7 +9,7 @@ html, body {
   width: 26px;
   height: 18px;
   pointer-events: none;
-  z-index: 99999;
+  z-index: 9999999;
   transform: translate(-50%, -50%);
   background-image: url('images/logo.png');
   background-size: contain;
@@ -29,7 +29,7 @@ html, body {
 .cloud {
   position: fixed;
   pointer-events: none;
-  z-index: 99998;
+  z-index: 9999998;
   opacity: 0;
   background-image: url('images/logo.png');
   background-size: contain;
