@@ -295,11 +295,15 @@ function abrirPreview(id) {
   const scroll = document.getElementById('preview-scroll');
   scroll.innerHTML = '';
   p.imagenes.forEach(src => {
+    const wrap = document.createElement('div');
+    wrap.className = 'preview-img-wrap';
     const img = document.createElement('img');
     img.src = src;
     img.alt = p.titulo;
     img.className = 'preview-img';
-    scroll.appendChild(img);
+    wrap.appendChild(img);
+    wrap.addEventListener('click', () => abrirZoom(src));
+    scroll.appendChild(wrap);
   });
   scroll.scrollTop = 0;
   document.getElementById('preview-modal').classList.add('activo');
@@ -315,8 +319,24 @@ function cerrarPreviewFuera(e) {
   if (e.target === document.getElementById('preview-modal')) cerrarPreview();
 }
 
+function abrirZoom(src) {
+  const overlay = document.getElementById('preview-zoom-overlay');
+  document.getElementById('preview-zoom-img').src = src;
+  overlay.classList.add('activo');
+}
+
+function cerrarZoom() {
+  document.getElementById('preview-zoom-overlay').classList.remove('activo');
+}
+
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') cerrarPreview();
+  if (e.key === 'Escape') {
+    if (document.getElementById('preview-zoom-overlay').classList.contains('activo')) {
+      cerrarZoom();
+    } else {
+      cerrarPreview();
+    }
+  }
 });
 </script>
 
@@ -335,6 +355,11 @@ document.addEventListener('keydown', e => {
       </a>
     </div>
   </div>
+</div>
+
+<!-- ZOOM LIGHTBOX -->
+<div id="preview-zoom-overlay" class="preview-zoom-overlay" onclick="cerrarZoom()">
+  <img id="preview-zoom-img" src="" alt="Zoom">
 </div>
 
     <!-- IR ARRIBA -->
