@@ -57,9 +57,9 @@ body::after {
 @media (max-width: 768px) {
   body::before,
   body::after {
-    height: 2800px;
-    -webkit-mask-image: linear-gradient(to bottom, #000 60%, rgba(0,0,0,0.4) 80%, transparent 95%);
-            mask-image: linear-gradient(to bottom, #000 60%, rgba(0,0,0,0.4) 80%, transparent 95%);
+    height: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 3800px, rgba(0,0,0,0.4) 4000px, transparent 4200px);
+            mask-image: linear-gradient(to bottom, #000 3800px, rgba(0,0,0,0.4) 4000px, transparent 4200px);
   }
 }
 
