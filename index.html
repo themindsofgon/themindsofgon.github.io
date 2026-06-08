@@ -541,14 +541,13 @@ document.addEventListener('keydown', e => {
         { opacity: 0, y: -30 },
         { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out', delay: 0.05 });
 
-      // HERO — título baja desde arriba, botón sube desde abajo
-      gsap.timeline({ delay: 0.3 })
-        .fromTo('.cabecera h2.texto',
-          { opacity: 0, y: -50 },
-          { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
-        .fromTo('.btn-trabajar',
-          { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out' }, '-=0.4');
+      // HERO — título y botón aparecen a la vez
+      gsap.fromTo('.cabecera h2.texto',
+        { opacity: 0, y: -50 },
+        { opacity: 1, y: 0, duration: 1.2, ease: 'expo.out', delay: 0.3 });
+      gsap.fromTo('.btn-trabajar',
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.2, ease: 'expo.out', delay: 0.3 });
 
       // TÍTULO — de abajo a arriba
       gsap.fromTo('.proyectos-titulo',
