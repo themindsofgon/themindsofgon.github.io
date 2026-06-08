@@ -24,8 +24,8 @@ body::after {
   pointer-events: none;
   background-repeat: repeat;
   /* Visibles hasta zona contacto, se desvanecen al final de la tarjeta */
-  -webkit-mask-image: linear-gradient(to bottom, #000 2300px, rgba(0,0,0,0.4) 2500px, transparent 2700px);
-          mask-image: linear-gradient(to bottom, #000 2300px, rgba(0,0,0,0.4) 2500px, transparent 2700px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 2500px, rgba(0,0,0,0.4) 2650px, transparent 2800px);
+          mask-image: linear-gradient(to bottom, #000 2500px, rgba(0,0,0,0.4) 2650px, transparent 2800px);
 }
 
 /* Capa trasera: nubes grandes, tenues, movimiento lento */
