@@ -18,14 +18,10 @@ body::after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 9999px;
   z-index: -1;
   pointer-events: none;
   background-repeat: repeat;
-  /* Difusión suave: nubes visibles hasta zona de contacto, se desvanecen antes del footer */
-  /* Fade empieza 350px antes del final, completo 150px antes */
-  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 350px), rgba(0,0,0,0.4) calc(100% - 200px), transparent calc(100% - 100px));
-          mask-image: linear-gradient(to bottom, #000 calc(100% - 350px), rgba(0,0,0,0.4) calc(100% - 200px), transparent calc(100% - 100px));
 }
 
 /* Capa trasera: nubes grandes, tenues, movimiento lento */
