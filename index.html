@@ -577,9 +577,8 @@ document.addEventListener('keydown', e => {
         start: 'top bottom',
         once: true,
         onEnter: () => {
-          gsap.to('.footer-cloud-divider', { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out' });
-          gsap.to(['.footer-logo', '.footer-tagline', '.footer-nav', '.footer-social'], {
-            opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', stagger: 0.1, delay: 0.2
+          gsap.to(['.footer-cloud-divider', '.footer-logo', '.footer-tagline', '.footer-nav', '.footer-social'], {
+            opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08
           });
         }
       });
