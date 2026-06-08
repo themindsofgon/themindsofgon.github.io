@@ -23,8 +23,8 @@ body::after {
   pointer-events: none;
   background-repeat: repeat;
   /* Fade antes del footer: visible hasta 2500px, desaparece en 2900px */
-  -webkit-mask-image: linear-gradient(to bottom, #000 2500px, rgba(0,0,0,0.5) 2700px, transparent 2900px);
-          mask-image: linear-gradient(to bottom, #000 2500px, rgba(0,0,0,0.5) 2700px, transparent 2900px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 1200px, rgba(0,0,0,0.5) 1500px, transparent 1800px);
+          mask-image: linear-gradient(to bottom, #000 1200px, rgba(0,0,0,0.5) 1500px, transparent 1800px);
 }
 
 /* Capa trasera: nubes grandes, tenues, movimiento lento */
