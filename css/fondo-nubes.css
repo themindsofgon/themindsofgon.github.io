@@ -23,8 +23,8 @@ body::after {
   pointer-events: none;
   background-repeat: repeat;
   /* Difusión suave: nubes visibles hasta zona de contacto, se desvanecen antes del footer */
-  -webkit-mask-image: linear-gradient(to bottom, #000 82%, rgba(0,0,0,0.4) 90%, transparent 96%);
-          mask-image: linear-gradient(to bottom, #000 82%, rgba(0,0,0,0.4) 90%, transparent 96%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 91%, rgba(0,0,0,0.4) 95%, transparent 99%);
+          mask-image: linear-gradient(to bottom, #000 91%, rgba(0,0,0,0.4) 95%, transparent 99%);
 }
 
 /* Capa trasera: nubes grandes, tenues, movimiento lento */
