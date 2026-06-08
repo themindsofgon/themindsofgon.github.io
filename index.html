@@ -565,21 +565,6 @@ document.addEventListener('keydown', e => {
         { opacity: 1, x: 0, duration: 1.3, ease: 'expo.out',
           scrollTrigger: { trigger: '#contacto-left', start: 'top 88%', once: true } });
 
-      // FOOTER — fondo + partes
-      gsap.set('footer', { opacity: 0, y: 40 });
-      gsap.set(['.footer-logo', '.footer-tagline', '.footer-nav', '.footer-social'], { opacity: 0, y: 20 });
-      ScrollTrigger.create({
-        trigger: 'footer',
-        start: 'top 98%',
-        once: true,
-        onEnter: () => {
-          gsap.to('footer', { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out' });
-          gsap.to(['.footer-logo', '.footer-tagline', '.footer-nav', '.footer-social'], {
-            opacity: 1, y: 0, duration: 0.7, ease: 'expo.out', stagger: 0.12, delay: 0.3
-          });
-        }
-      });
-
       // CONTACTO TEXTO — stagger desde el contenedor, sin esperas individuales
       gsap.fromTo(['.contacto-sub', '.contacto-right h2', '.contacto-desc', '.contacto-email', '.contacto-redes'],
         { opacity: 0, y: 40 },
