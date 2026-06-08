@@ -536,14 +536,14 @@ document.addEventListener('keydown', e => {
     <script>
       gsap.registerPlugin(ScrollTrigger);
 
-      // HERO — de abajo a arriba al cargar
+      // HERO — título sube desde abajo, botón entra desde la izquierda
       gsap.timeline({ delay: 0.05 })
         .fromTo('.cabecera h2.texto',
           { opacity: 0, y: 50 },
           { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
         .fromTo('.btn-trabajar',
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.6, ease: 'expo.out' }, '-=0.4');
+          { opacity: 0, x: -40, scale: 0.95 },
+          { opacity: 1, x: 0, scale: 1, duration: 0.7, ease: 'expo.out' }, '-=0.3');
 
       // TÍTULO — de abajo a arriba
       gsap.fromTo('.proyectos-titulo',
