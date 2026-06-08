@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="style.css"/>
      <link rel="stylesheet" href="css/portfolio.css?v=5"/>
   <style>
-    .btn-trabajar, .proyectos-titulo,
+    .cabecera h2.texto, .btn-trabajar, .proyectos-titulo,
     .proyecto-card, #contacto-left,
     .contacto-sub, .contacto-right h2, .contacto-desc,
     .contacto-email, .contacto-redes { opacity: 0; }
@@ -536,30 +536,14 @@ document.addEventListener('keydown', e => {
     <script>
       gsap.registerPlugin(ScrollTrigger);
 
-      // HERO — word-by-word reveal con máscara overflow:hidden
-      (function() {
-        const h2 = document.querySelector('.cabecera h2.texto');
-        // Separar en tokens: palabras y <br>
-        const raw = h2.innerHTML.replace(/<br\s*\/?>/gi, '|||BR|||');
-        const tokens = raw.split(/\s+/);
-        h2.innerHTML = tokens.map(t => {
-          if (t === '|||BR|||') return '<br>';
-          return `<span style="display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:0.1em"><span class="w-inner" style="display:inline-block">${t}</span></span>`;
-        }).join(' ');
-
-        gsap.set('.w-inner', { y: '110%', opacity: 0 });
-        gsap.set('.btn-trabajar', { opacity: 0, y: 40 });
-
-        gsap.timeline({ delay: 0.1 })
-          .to('.w-inner', {
-            y: '0%', opacity: 1,
-            duration: 1.0, stagger: 0.09, ease: 'expo.out'
-          })
-          .to('.btn-trabajar', {
-            opacity: 1, y: 0,
-            duration: 0.8, ease: 'expo.out'
-          }, '-=0.5');
-      })();
+      // HERO — título baja desde arriba, botón sube desde abajo
+      gsap.timeline({ delay: 0.05 })
+        .fromTo('.cabecera h2.texto',
+          { opacity: 0, y: -50 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
+        .fromTo('.btn-trabajar',
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out' }, '-=0.4');
 
       // TÍTULO — de abajo a arriba
       gsap.fromTo('.proyectos-titulo',
