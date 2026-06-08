@@ -32,7 +32,7 @@ body::after {
 body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='760' height='520' viewBox='0 0 760 520'%3E%3Cdefs%3E%3Cfilter id='b' x='-60%25' y='-60%25' width='220%25' height='220%25'%3E%3CfeGaussianBlur stdDeviation='0'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='%23dde8f3' filter='url(%23b)'%3E%3Cg transform='translate(80,90) scale(1.3)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(470,310) scale(1.1)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-size: 760px auto;
-  opacity: 0.28;
+  opacity: 0.18;
   animation: nubes-drift-lento 14s linear infinite;
 }
 
@@ -40,7 +40,7 @@ body::before {
 body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='420' viewBox='0 0 600 420'%3E%3Cdefs%3E%3Cfilter id='b' x='-60%25' y='-60%25' width='220%25' height='220%25'%3E%3CfeGaussianBlur stdDeviation='0'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='%23c9d9ec' filter='url(%23b)'%3E%3Cg transform='translate(360,60) scale(0.95)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(60,250) scale(0.8)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-size: 600px auto;
-  opacity: 0.35;
+  opacity: 0.25;
   animation: nubes-drift-rapido 8s linear infinite;
 }
 
