@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="style.css"/>
      <link rel="stylesheet" href="css/portfolio.css?v=5"/>
   <style>
-    .cabecera h2.texto, .btn-trabajar, .proyectos-titulo,
+    .nav.container__menu, .cabecera h2.texto, .btn-trabajar, .proyectos-titulo,
     .proyecto-card, #contacto-left,
     .contacto-sub, .contacto-right h2, .contacto-desc,
     .contacto-email, .contacto-redes { opacity: 0; }
@@ -536,8 +536,13 @@ document.addEventListener('keydown', e => {
     <script>
       gsap.registerPlugin(ScrollTrigger);
 
+      // NAVBAR — baja desde arriba al cargar
+      gsap.fromTo('.nav.container__menu',
+        { opacity: 0, y: -30 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out', delay: 0.05 });
+
       // HERO — título baja desde arriba, botón sube desde abajo
-      gsap.timeline({ delay: 0.05 })
+      gsap.timeline({ delay: 0.3 })
         .fromTo('.cabecera h2.texto',
           { opacity: 0, y: -50 },
           { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
