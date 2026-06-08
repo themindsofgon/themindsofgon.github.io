@@ -23,7 +23,9 @@ body::after {
   pointer-events: none;
   background-repeat: repeat;
   /* Difusión suave: nubes visibles hasta zona de contacto, se desvanecen antes del footer */
-  /* Sin máscara — el footer cubre las nubes con su propio fondo */
+  /* Fade empieza 350px antes del final, completo 150px antes */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 350px), rgba(0,0,0,0.4) calc(100% - 200px), transparent calc(100% - 100px));
+          mask-image: linear-gradient(to bottom, #000 calc(100% - 350px), rgba(0,0,0,0.4) calc(100% - 200px), transparent calc(100% - 100px));
 }
 
 /* Capa trasera: nubes grandes, tenues, movimiento lento */
