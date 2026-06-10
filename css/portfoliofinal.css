@@ -89,7 +89,7 @@
     text-align: center;
     position: relative;
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 15px;
   }
   
@@ -142,7 +142,7 @@
   }
   
   .navbar-brand {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Nunito', sans-serif;
   }
   
   .navbar-brand img {
@@ -308,7 +308,7 @@
   }
   
   .about_section a {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Nunito', sans-serif;
     display: inline-block;
     color: #000000;
     position: relative;
