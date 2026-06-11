@@ -21,6 +21,8 @@
   align-items: center;
   justify-content: space-between;
 padding: 25px;
+  position: relative;
+  z-index: 50;
 }
 
 
@@ -122,18 +124,7 @@ padding: 25px;
 
 @media screen and (max-width: 800px) {
   .lang-opt {
-    font-size: 12px;
-    padding: 3px 8px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .lang-switch {
-    box-shadow: 2px 2px 0 #e72c76;
-  }
-
-  .lang-opt {
-    font-size: 10px;
-    padding: 2px 6px;
+    font-size: 15px;
+    padding: 5px 14px;
   }
 }

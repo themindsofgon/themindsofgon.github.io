@@ -57,7 +57,11 @@
                 <a href="index.html"><img src="images/logo.png"></a>
             </div>
             <div class="menu">
-                <i class="fas fa-bars" id="btn_menu"></i>
+                <div id="btn_menu" role="button" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div id="back_menu"></div>
                 <nav id="nav">
                     <ul>
@@ -698,9 +702,11 @@ document.addEventListener('keydown', e => {
       gsap.registerPlugin(ScrollTrigger);
 
       // NAVBAR — baja desde arriba al cargar
+      // clearProps quita el transform al terminar: si queda puesto, rompe el
+      // position:fixed del panel hamburguesa en móvil
       gsap.fromTo('.nav.container__menu',
         { opacity: 0, y: -70 },
-        { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', delay: 0.05 });
+        { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', delay: 0.05, clearProps: 'transform' });
 
       // HERO — título igual que el navbar
       gsap.fromTo('.cabecera h2.texto',

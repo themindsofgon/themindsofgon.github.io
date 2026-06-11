@@ -1,19 +1,21 @@
-document.getElementById("btn_menu").addEventListener("click", mostrar_menu);
+const btnMenu = document.getElementById("btn_menu");
+const navMenu = document.getElementById("nav");
+const backMenu = document.getElementById("back_menu");
 
-document.getElementById("back_menu").addEventListener("click", ocultar_menu);
+btnMenu.addEventListener("click", mostrar_menu);
+backMenu.addEventListener("click", ocultar_menu);
 
-nav = document.getElementById("nav");
-background_menu = document.getElementById("back_menu");
+// Cerrar el menú al pulsar cualquier enlace del panel
+navMenu.querySelectorAll("a").forEach(enlace => {
+    enlace.addEventListener("click", ocultar_menu);
+});
 
 function mostrar_menu(){
-
-    nav.style.right = "0px";
-    background_menu.style.display = "block";
+    navMenu.classList.add("abierto");
+    backMenu.classList.add("visible");
 }
 
 function ocultar_menu(){
-
-    nav.style.right = "-250px";
-    background_menu.style.display = "none";
+    navMenu.classList.remove("abierto");
+    backMenu.classList.remove("visible");
 }
-

@@ -8,6 +8,7 @@
 
 .menu ul{
     display: flex;
+    align-items: center;
 }
 
 .menu ul li{
@@ -24,9 +25,13 @@
     display: none;
 }
 
+#back_menu{
+    display: none;
+}
 
 
-/*Haciendo la página Responsive*/
+
+/*Haciendo la página Responsive: menú hamburguesa en móvil*/
 
 @media screen and (max-width:800px){
 
@@ -34,97 +39,9 @@
         padding: 0px;
     }
 
-}
-
-@media screen and (max-width: 800px){
-
-    .menu nav{
-        position: fixed;
-        top: 0;
-        right: -250px;
-        background: rgb(245, 245, 245);
-        width: 250px;
-        height: 100vh;
-        padding: 40px;
-        z-index: 1;
-        transition: all 300ms;
-        display: flex;
-        font-size:18px;
-        align-items: center;
-    }
-
-    .menu ul{
-        flex-direction: column;
-        margin-top: 40px;
-        margin-right:90px;
- 
-    }
-
-    .menu ul li{
-        margin-top: 30px;
-        margin-left: 0;
-    }
-
-    .menu ul li a{
-        color: black;
-        font-size: 26px;
-    }
-
-    #selected{
-        background: none;
-        padding: 0px;
-        border-radius: none;
-        color: #F6615D;
-    }
-
-    .menu nav img{
-        display: block;
-        width: 60px;
-    }
-
-    #back_menu{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0,0,0,0.3);
-        display: none;
-    }
-
-    .menu #btn_menu{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.1);
-        font-size: 24px;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 300ms;
-    }
-
-    .menu #btn_menu:hover{
-        background: rgba(255, 255, 255, 0.2);
-    }
-}
-
-
-/* Móvil: mostrar los enlaces del menú a la derecha (sin hamburguesa) */
-@media screen and (max-width: 800px){
-
-    .menu #btn_menu{
-        display: none;
-    }
-
-    #back_menu{
-        display: none !important;
-    }
-
     .nav{
         padding-left: 25px;
-        padding-right: 10px;
+        padding-right: 20px;
     }
 
     .menu{
@@ -132,54 +49,95 @@
         margin-left: auto;
     }
 
-    .menu ul li:last-child{
-        margin-right: 0;
+    /* Botón hamburguesa: cuadrado con esquinas redondeadas y tres rayas */
+    .menu #btn_menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 46px;
+        height: 46px;
+        background: #fff;
+        border: 2px solid #0e0e0e;
+        border-radius: 12px;
+        box-shadow: 3px 3px 0 #e72c76;
+        cursor: pointer;
+        transition: all 300ms;
     }
 
+    .menu #btn_menu span{
+        display: block;
+        width: 20px;
+        height: 3px;
+        border-radius: 2px;
+        background: #0e0e0e;
+        transition: background 300ms;
+    }
+
+    .menu #btn_menu:hover span{
+        background: #e72c76;
+    }
+
+    /* Panel lateral deslizante */
     .menu nav{
-        position: static;
-        right: auto;
-        top: auto;
-        background: transparent;
-        width: auto;
-        height: auto;
-        padding: 0;
-        flex-direction: row;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        background: #fff;
+        width: 280px;
+        height: 100vh;
+        padding: 90px 36px 40px;
+        z-index: 12;
+        transition: right 300ms ease;
+        display: flex;
+        align-items: flex-start;
+        box-shadow: -8px 0 30px rgba(0,0,0,0.12);
     }
 
-    .menu nav img{
-        display: none;
+    .menu nav.abierto{
+        right: 0;
     }
 
     .menu ul{
-        flex-direction: row;
+        flex-direction: column;
+        align-items: flex-start;
         margin: 0;
-        align-items: center;
     }
 
     .menu ul li{
-        margin-top: 0;
-        margin-left: 18px;
+        margin: 0 0 30px 0;
     }
 
     .menu ul li a{
-        font-size: 15px;
-        white-space: nowrap;
+        color: #0e0e0e;
+        font-size: 24px;
+    }
+
+    .menu ul li.lang-li{
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    /* Fondo oscuro al abrir el menú */
+    #back_menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.35);
+        z-index: 11;
+    }
+
+    #back_menu.visible{
+        display: block;
     }
 }
 
+
 @media screen and (max-width: 480px){
-    .menu ul li a{
-        font-size: 12px;
-    }
-
-    .menu ul li{
-        margin-left: 10px;
-    }
-
     .logo img{
         width: 44px;
     }
 }
-
-
