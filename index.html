@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -61,11 +61,17 @@
                 <div id="back_menu"></div>
                 <nav id="nav">
                     <ul>
-                        <li><a href="#proyectos">Mis Proyectos</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#proyectos" data-i18n="nav_proyectos">Mis Proyectos</a></li>
+                        <li><a href="#servicios" data-i18n="nav_servicios">Servicios</a></li>
+                        <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
                         <li><a href="https://www.instagram.com/themindsofgon/" target="_blank">
                             <i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="lang-li">
+                            <div class="lang-switch" role="group" aria-label="Idioma / Language">
+                                <button type="button" class="lang-opt activo" data-lang="es">ES</button>
+                                <button type="button" class="lang-opt" data-lang="en">EN</button>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -76,19 +82,19 @@
     <!-- SECCTION PRESENTACION -->
 
    <header class="cabecera">
-  <h2 class="texto">De mis mentes <br><span>para ti.</span></h2>
+  <h2 class="texto" data-i18n="hero_titulo">De mis mentes <br><span>para ti.</span></h2>
   <a class="btn-trabajar"
      href="https://docs.google.com/forms/d/e/1FAIpQLSd9R_k8daJFjWk8nY90wIIZoaF4HXHfhElLMU0XRta8h5B11g/viewform?usp=dialog"
      target="_blank"
      rel="noopener noreferrer">
-    <span>¿Trabajamos juntos?</span>
+    <span data-i18n="hero_btn">¿Trabajamos juntos?</span>
   </a>
 </header>
 
 
     <!-- SECCION PORTAFOLIO -->
 <section id="proyectos">
-  <h2 class="proyectos-titulo">Mis <span>Proyectos</span></h2>
+  <h2 class="proyectos-titulo" data-i18n="proy_titulo">Mis <span>Proyectos</span></h2>
 
   <div class="proyectos-grid">
 
@@ -98,8 +104,8 @@
         <img src="images/pokemon-tcg.png" alt="Diseños Tiendas Pokémon TCG">
         <div class="proyecto-overlay">
           <div class="overlay-content">
-            <h3>Tiendas Pokémon TCG</h3>
-            <span class="ver-preview-btn">Ver proyecto →</span>
+            <h3 data-i18n="proy_pokemon">Tiendas Pokémon TCG</h3>
+            <span class="ver-preview-btn" data-i18n="ver_proyecto">Ver proyecto →</span>
           </div>
         </div>
       </div>
@@ -111,8 +117,8 @@
         <img src="images/matamos.jpg" alt="Diseños de portadas musicales">
         <div class="proyecto-overlay">
           <div class="overlay-content">
-            <h3>Portadas musicales</h3>
-            <span class="ver-preview-btn">Ver proyecto →</span>
+            <h3 data-i18n="proy_portadas">Portadas musicales</h3>
+            <span class="ver-preview-btn" data-i18n="ver_proyecto">Ver proyecto →</span>
           </div>
         </div>
       </div>
@@ -125,7 +131,7 @@
         <div class="proyecto-overlay">
           <div class="overlay-content">
             <h3>Pa Quererte</h3>
-            <span class="ver-preview-btn">Ver proyecto →</span>
+            <span class="ver-preview-btn" data-i18n="ver_proyecto">Ver proyecto →</span>
           </div>
         </div>
       </div>
@@ -138,7 +144,7 @@
         <div class="proyecto-overlay">
           <div class="overlay-content">
             <h3>Nobody Like Yo</h3>
-            <a href="https://www.instagram.com/p/CkDTo5rsTaH/?hl=es" target="_blank">Ver proyecto →</a>
+            <a href="https://www.instagram.com/p/CkDTo5rsTaH/?hl=es" target="_blank" data-i18n="ver_proyecto">Ver proyecto →</a>
           </div>
         </div>
       </div>
@@ -151,7 +157,7 @@
         <div class="proyecto-overlay">
           <div class="overlay-content">
             <h3>Laberinto Vino</h3>
-            <a href="https://www.behance.net/gallery/212869167/Laberinto-Vino" target="_blank">Ver proyecto →</a>
+            <a href="https://www.behance.net/gallery/212869167/Laberinto-Vino" target="_blank" data-i18n="ver_proyecto">Ver proyecto →</a>
           </div>
         </div>
       </div>
@@ -167,7 +173,7 @@
 
     <!-- SECTION SERVICIOS -->
 <section id="servicios">
-  <h2 class="servicios-titulo">Mis <span>Servicios</span></h2>
+  <h2 class="servicios-titulo" data-i18n="serv_titulo">Mis <span>Servicios</span></h2>
   <div class="servicios-grid">
 
     <!-- FILA 1 -->
@@ -180,8 +186,8 @@
           <line x1="35" y1="80" x2="65" y2="80"/>
         </svg>
       </div>
-      <h3>BRANDING</h3>
-      <p>Identidad visual, logotipos y sistemas de marca.</p>
+      <h3 data-i18n="serv_branding_t">BRANDING</h3>
+      <p data-i18n="serv_branding_p">Identidad visual, logotipos y sistemas de marca.</p>
     </div>
 
     <div class="servicio-card">
@@ -199,8 +205,8 @@
           <line x1="56" y1="62" x2="56" y2="70"/>
         </svg>
       </div>
-      <h3>MEDIA CONTENT</h3>
-      <p>Contenido visual para redes sociales y digital.</p>
+      <h3 data-i18n="serv_media_t">MEDIA CONTENT</h3>
+      <p data-i18n="serv_media_p">Contenido visual para redes sociales y digital.</p>
     </div>
 
     <div class="servicio-card">
@@ -216,8 +222,8 @@
           <circle cx="52" cy="42" r="2.5"/>
         </svg>
       </div>
-      <h3>PORTADAS MUSICALES</h3>
-      <p>Arte para singles, EPs y álbumes de cualquier género.</p>
+      <h3 data-i18n="serv_portadas_t">PORTADAS MUSICALES</h3>
+      <p data-i18n="serv_portadas_p">Arte para singles, EPs y álbumes de cualquier género.</p>
     </div>
 
     <div class="servicio-card">
@@ -234,8 +240,8 @@
           <line x1="56" y1="46" x2="78" y2="50"/>
         </svg>
       </div>
-      <h3>EDITORIAL</h3>
-      <p>Diseño de libros, revistas y publicaciones impresas.</p>
+      <h3 data-i18n="serv_editorial_t">EDITORIAL</h3>
+      <p data-i18n="serv_editorial_p">Diseño de libros, revistas y publicaciones impresas.</p>
     </div>
 
     <!-- FILA 2 -->
@@ -251,8 +257,8 @@
           <line x1="78" y1="62" x2="88" y2="62"/>
         </svg>
       </div>
-      <h3>PUBLICIDAD</h3>
-      <p>Piezas publicitarias para campañas digitales e impresas.</p>
+      <h3 data-i18n="serv_publicidad_t">PUBLICIDAD</h3>
+      <p data-i18n="serv_publicidad_p">Piezas publicitarias para campañas digitales e impresas.</p>
     </div>
 
     <div class="servicio-card">
@@ -270,8 +276,8 @@
           <polygon points="42,38 42,62 68,50"/>
         </svg>
       </div>
-      <h3>MOTION GRAPHICS</h3>
-      <p>Animaciones y piezas audiovisuales para marca y contenido.</p>
+      <h3 data-i18n="serv_motion_t">MOTION GRAPHICS</h3>
+      <p data-i18n="serv_motion_p">Animaciones y piezas audiovisuales para marca y contenido.</p>
     </div>
 
     <div class="servicio-card">
@@ -289,8 +295,8 @@
           <rect x="56" y="22" width="22" height="12" rx="2"/>
         </svg>
       </div>
-      <h3>PÁGINAS WEB</h3>
-      <p>Diseño y maquetación de landing pages y sitios web.</p>
+      <h3 data-i18n="serv_web_t">PÁGINAS WEB</h3>
+      <p data-i18n="serv_web_p">Diseño y maquetación de landing pages y sitios web.</p>
     </div>
 
     <div class="servicio-card">
@@ -306,8 +312,8 @@
           <line x1="42" y1="66" x2="58" y2="66"/>
         </svg>
       </div>
-      <h3>OTROS</h3>
-      <p>¿Tienes un proyecto diferente? Cuéntamelo, encontramos la solución.</p>
+      <h3 data-i18n="serv_otros_t">OTROS</h3>
+      <p data-i18n="serv_otros_p">¿Tienes un proyecto diferente? Cuéntamelo, encontramos la solución.</p>
     </div>
 
   </div>
@@ -323,9 +329,9 @@
     </div>
 
     <div class="contacto-right">
-      <p class="contacto-sub">¿Tienes un proyecto en mente?</p>
-      <h2>Hablemos <span>.</span></h2>
-      <p class="contacto-desc">Gonzalo García Orts, diseñador gráfico freelance bajo TheMindsOfGon. Especializado en identidad visual, diseño editorial, motion graphics y redes sociales. Suite Adobe avanzada e IA integrada en el flujo creativo.</p>
+      <p class="contacto-sub" data-i18n="cont_sub">¿Tienes un proyecto en mente?</p>
+      <h2 data-i18n="cont_titulo">Hablemos <span>.</span></h2>
+      <p class="contacto-desc" data-i18n="cont_desc">Gonzalo García Orts, diseñador gráfico freelance bajo TheMindsOfGon. Especializado en identidad visual, diseño editorial, motion graphics y redes sociales. Suite Adobe avanzada e IA integrada en el flujo creativo.</p>
 
       <a class="contacto-email" href="mailto:themindsofgon@gmail.com">
         <span>themindsofgon@gmail.com</span>
@@ -410,6 +416,7 @@ setInterval(cambiarImagen, 4500);
 const proyectos = {
   pokemon: {
     titulo: 'Tiendas Pokémon TCG',
+    titulo_en: 'Pokémon TCG Stores',
     behance: 'https://www.behance.net/gallery/245857543/Disenos-Tiendas-Pokemon-TCG',
     imagenes: [
       'images/imgsbehance/Tiendas%20Pokemon%20TCG/1.png',
@@ -421,6 +428,7 @@ const proyectos = {
   },
   portadas: {
     titulo: 'Portadas musicales',
+    titulo_en: 'Music Covers',
     behance: 'https://www.behance.net/gallery/250502393/Disenos-de-portadas-musicales',
     imagenes: [
       'images/imgsbehance/Portadas%20Musicales/1.jpg',
@@ -446,7 +454,8 @@ const proyectos = {
 // ── PREVIEW MODAL ──
 function abrirPreview(id) {
   const p = proyectos[id];
-  document.getElementById('preview-titulo').textContent = p.titulo;
+  const enIngles = document.documentElement.lang === 'en';
+  document.getElementById('preview-titulo').textContent = (enIngles && p.titulo_en) ? p.titulo_en : p.titulo;
   document.getElementById('preview-behance-btn').href = p.behance;
   const scroll = document.getElementById('preview-scroll');
   scroll.innerHTML = '';
@@ -458,7 +467,7 @@ function abrirPreview(id) {
     img.alt = p.titulo;
     img.className = 'pv-img';
     img.draggable = false;
-    img.title = 'Clic para ampliar';
+    img.title = enIngles ? 'Click to enlarge' : 'Clic para ampliar';
     img.addEventListener('click', () => abrirLightbox(src));
     item.appendChild(img);
     scroll.appendChild(item);
@@ -595,7 +604,7 @@ document.addEventListener('keydown', e => {
     <div class="preview-footer">
       <a id="preview-behance-btn" href="#" target="_blank" rel="noopener noreferrer" class="preview-behance-btn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.221 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
-        Ver en Behance
+        <span data-i18n="modal_behance">Ver en Behance</span>
       </a>
     </div>
   </div>
@@ -604,11 +613,11 @@ document.addEventListener('keydown', e => {
 <!-- LIGHTBOX ZOOM -->
 <div id="pv-lightbox" class="pv-lightbox">
   <div class="pv-lb-bar">
-    <button id="pv-lb-out" class="pv-lb-btn" title="Reducir">&#x2212;</button>
+    <button id="pv-lb-out" class="pv-lb-btn" title="Reducir" data-i18n-title="lb_reducir">&#x2212;</button>
     <span id="pv-lb-label" class="pv-lb-label">100%</span>
-    <button id="pv-lb-in" class="pv-lb-btn" title="Ampliar">&#x2b;</button>
-    <button id="pv-lb-reset" class="pv-lb-btn" title="Restablecer">&#x21ba;</button>
-    <button class="pv-lb-btn pv-lb-cerrar" onclick="cerrarLightbox()" title="Cerrar">&#x2715;</button>
+    <button id="pv-lb-in" class="pv-lb-btn" title="Ampliar" data-i18n-title="lb_ampliar">&#x2b;</button>
+    <button id="pv-lb-reset" class="pv-lb-btn" title="Restablecer" data-i18n-title="lb_reset">&#x21ba;</button>
+    <button class="pv-lb-btn pv-lb-cerrar" onclick="cerrarLightbox()" title="Cerrar" data-i18n-title="lb_cerrar">&#x2715;</button>
   </div>
   <img id="pv-lb-img" src="" alt="Zoom" draggable="false">
 </div>
@@ -638,13 +647,13 @@ document.addEventListener('keydown', e => {
       <img src="images/logo.png" alt="logo" />
       <a class="email" href="mailto:themindsofgon@gmail.com" title="Email">themindsofgon@gmail.com</a>
     </div>
-    <span class="footer-tagline">De mis mentes para ti.</span>
+    <span class="footer-tagline" data-i18n="footer_tagline">De mis mentes para ti.</span>
   </div>
 
   <div class="footer-bottom">
     <nav class="footer-nav">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9R_k8daJFjWk8nY90wIIZoaF4HXHfhElLMU0XRta8h5B11g/viewform" target="_blank">Trabaja conmigo</a>
-      <a href="https://www.behance.net/themindsofgon" target="_blank">Portafolio</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9R_k8daJFjWk8nY90wIIZoaF4HXHfhElLMU0XRta8h5B11g/viewform" target="_blank" data-i18n="footer_trabaja">Trabaja conmigo</a>
+      <a href="https://www.behance.net/themindsofgon" target="_blank" data-i18n="footer_portafolio">Portafolio</a>
     </nav>
 
     <div class="footer-social">
@@ -677,6 +686,7 @@ document.addEventListener('keydown', e => {
 
 
     <!-- JS -->
+    <script src="js/idioma.js"></script>
     <script src="js/irarriba.js"></script>
     <script src="js/contactoscript.js"></script>
     <script src="js/burguerbutton.js"></script>

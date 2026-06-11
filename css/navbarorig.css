@@ -81,3 +81,59 @@ padding: 25px;
 .navbar>li {
   float: left;
 }
+
+
+/* ── SELECTOR DE IDIOMA ES/EN ── */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #0e0e0e;
+  border-radius: 999px;
+  padding: 2px;
+  box-shadow: 3px 3px 0 #e72c76;
+}
+
+.lang-opt {
+  border: none;
+  background: transparent;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: #0e0e0e;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-opt:hover {
+  color: #e72c76;
+}
+
+.lang-opt.activo {
+  background: #0e0e0e;
+  color: #fff;
+}
+
+.lang-opt.activo:hover {
+  color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .lang-opt {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .lang-switch {
+    box-shadow: 2px 2px 0 #e72c76;
+  }
+
+  .lang-opt {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
