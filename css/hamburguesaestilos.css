@@ -134,16 +134,18 @@
         z-index: 0;
     }
 
+    /* Nubes en movimiento: misma técnica que el fondo de la página,
+       desplazándose hacia la derecha en bucle continuo y muy lento */
     .menu nav::after{
         content: "";
         position: absolute;
-        width: 150px;
-        height: 55px;
-        background: #eef1f8;
-        border-radius: 999px;
-        top: 110px;
-        left: -45px;
-        box-shadow: 230px 60px 0 -10px #f4f6fb, 110px 420px 0 -14px #eef1f8;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='420' viewBox='0 0 600 420'%3E%3Cg fill='%23dde8f3'%3E%3Cg transform='translate(360,60) scale(0.95)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(60,250) scale(0.8)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 600px auto;
+        opacity: 0.5;
+        animation: nubes-menu-drift 70s linear infinite;
+        pointer-events: none;
         z-index: 0;
     }
 
@@ -230,5 +232,20 @@
 
     .menu ul li a{
         font-size: 30px;
+    }
+}
+
+
+/* Deriva continua de las nubes del menú (un ciclo = un mosaico completo,
+   así el bucle es invisible) */
+@keyframes nubes-menu-drift{
+    from{ background-position: 0 0; }
+    to{ background-position: 600px 0; }
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce){
+    .menu nav::after{
+        animation: none;
     }
 }
