@@ -134,17 +134,18 @@
         z-index: 0;
     }
 
-    /* Nubes en movimiento: misma técnica que el fondo de la página,
-       desplazándose hacia la derecha en bucle continuo y muy lento */
+    /* Las mismas nubes del fondo de la página (fondo-nubes.css): capa
+       delantera y trasera con sus mismas opacidades, derivando a la derecha */
     .menu nav::after{
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='420' viewBox='0 0 600 420'%3E%3Cg fill='%23dde8f3'%3E%3Cg transform='translate(360,60) scale(0.95)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(60,250) scale(0.8)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-image:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='420' viewBox='0 0 600 420'%3E%3Cg fill='%23c9d9ec' fill-opacity='0.18'%3E%3Cg transform='translate(360,60) scale(0.95)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(60,250) scale(0.8)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='760' height='520' viewBox='0 0 760 520'%3E%3Cg fill='%23dde8f3' fill-opacity='0.13'%3E%3Cg transform='translate(80,90) scale(1.3)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(470,310) scale(1.1)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         background-repeat: repeat;
-        background-size: 600px auto;
-        opacity: 0.5;
-        animation: nubes-menu-drift 70s linear infinite;
+        background-size: 600px auto, 760px auto;
+        animation: nubes-menu-drift 14s linear infinite;
         pointer-events: none;
         z-index: 0;
     }
@@ -236,11 +237,12 @@
 }
 
 
-/* Deriva continua de las nubes del menú (un ciclo = un mosaico completo,
-   así el bucle es invisible) */
+/* Deriva continua de las nubes del menú: la capa delantera avanza dos
+   mosaicos por ciclo y la trasera uno, recreando el parallax del fondo
+   de la página. Distancias múltiplo del mosaico = bucle invisible. */
 @keyframes nubes-menu-drift{
-    from{ background-position: 0 0; }
-    to{ background-position: 600px 0; }
+    from{ background-position: 0 0, 0 0; }
+    to{ background-position: 1200px 0, 760px 0; }
 }
 
 /* Respeta a quien prefiere menos movimiento */
