@@ -109,6 +109,7 @@
         align-items: center;
         padding: 0 38px;
         overflow: hidden;
+        overscroll-behavior: contain;
         clip-path: circle(0px at calc(100% - 43px) 50px);
         visibility: hidden;
         transition: clip-path 650ms cubic-bezier(0.65, 0, 0.25, 1), visibility 0s 650ms;
