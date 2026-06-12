@@ -103,10 +103,10 @@
         width: 100%;
         height: 100vh;
         height: 100dvh;
-        /* Blanco + mancha rosa en la esquina inferior derecha */
-        background:
-            radial-gradient(circle 160px at calc(100% - 50px) calc(100% - 30px), #fdeaf2 0 158px, rgba(253, 234, 242, 0) 160px),
-            #fff;
+        /* Fondo transparente: se ven las nubes REALES del fondo de la
+           página (mismos elementos, misma animación, cero desfase).
+           Solo añadimos la mancha rosa de la esquina. */
+        background: radial-gradient(circle 160px at calc(100% - 50px) calc(100% - 30px), #fdeaf2 0 158px, rgba(253, 234, 242, 0) 160px);
         z-index: 12;
         display: flex;
         align-items: center;
@@ -124,35 +124,27 @@
         transition: clip-path 650ms cubic-bezier(0.65, 0, 0.25, 1);
     }
 
-    /* Las mismas nubes del fondo de la página (fondo-nubes.css), con la
-       MISMA duración y fase de animación: como las dos animaciones
-       arrancan al cargar la página y duran lo mismo, las nubes del menú
-       están siempre en el mismo punto que las del fondo. El eje Y se
-       compensa por JS con el scroll al abrir (variables --nube-y-*). */
-    .menu nav::before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='760' height='520' viewBox='0 0 760 520'%3E%3Cg fill='%23dde8f3' fill-opacity='0.13'%3E%3Cg transform='translate(80,90) scale(1.3)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(470,310) scale(1.1)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        background-repeat: repeat;
-        background-size: 760px auto;
-        background-position-y: var(--nube-y-lento, 0px);
-        animation: nubes-menu-x-lento 14s linear infinite;
-        pointer-events: none;
-        z-index: 0;
+    /* Al abrir el menú se desvanece el contenido de la página: queda
+       solo el cielo con sus nubes (las de verdad) y encima el menú */
+    .cabecera,
+    #proyectos,
+    #servicios,
+    #contacto,
+    .footer-cloud-divider,
+    footer,
+    #button-up{
+        transition: opacity 250ms ease;
     }
 
-    .menu nav::after{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='420' viewBox='0 0 600 420'%3E%3Cg fill='%23c9d9ec' fill-opacity='0.18'%3E%3Cg transform='translate(360,60) scale(0.95)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3Cg transform='translate(60,250) scale(0.8)'%3E%3Cellipse cx='70' cy='58' rx='60' ry='30'/%3E%3Ccircle cx='30' cy='55' r='26'/%3E%3Ccircle cx='64' cy='40' r='32'/%3E%3Ccircle cx='104' cy='48' r='26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        background-repeat: repeat;
-        background-size: 600px auto;
-        background-position-y: var(--nube-y-rapido, 0px);
-        animation: nubes-menu-x-rapido 8s linear infinite;
+    body.menu-abierto .cabecera,
+    body.menu-abierto #proyectos,
+    body.menu-abierto #servicios,
+    body.menu-abierto #contacto,
+    body.menu-abierto .footer-cloud-divider,
+    body.menu-abierto footer,
+    body.menu-abierto #button-up{
+        opacity: 0 !important;
         pointer-events: none;
-        z-index: 0;
     }
 
     .menu ul{
@@ -242,24 +234,3 @@
 }
 
 
-/* Misma distancia y duración que nubes-drift-lento / nubes-drift-rapido
-   (fondo-nubes.css), pero animando solo el eje X para que el eje Y pueda
-   compensarse con el scroll. Igual fase + igual velocidad = sin saltos
-   al abrir o cerrar el menú. */
-@keyframes nubes-menu-x-lento{
-    from{ background-position-x: 0; }
-    to{ background-position-x: 760px; }
-}
-
-@keyframes nubes-menu-x-rapido{
-    from{ background-position-x: 0; }
-    to{ background-position-x: 600px; }
-}
-
-/* Respeta a quien prefiere menos movimiento (igual que el fondo) */
-@media (prefers-reduced-motion: reduce){
-    .menu nav::before,
-    .menu nav::after{
-        animation: none;
-    }
-}

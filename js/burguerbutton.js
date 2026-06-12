@@ -21,6 +21,9 @@ navMenu.querySelectorAll("a").forEach(enlace => {
 function mostrar_menu(){
     navMenu.classList.add("abierto");
     btnMenu.classList.add("abierto");
+    // Desvanece el contenido de la página: el menú es transparente y
+    // deja ver las nubes reales del fondo, sin duplicarlas
+    document.body.classList.add("menu-abierto");
 
     // Bloqueo de scroll fiable en móvil: fijamos el body en su posición
     // actual (overflow:hidden solo no funciona en iOS/Android)
@@ -38,6 +41,7 @@ function ocultar_menu(){
 
     navMenu.classList.remove("abierto");
     btnMenu.classList.remove("abierto");
+    document.body.classList.remove("menu-abierto");
 
     // Restauramos el body y volvemos al punto exacto de scroll
     document.body.style.position = "";
